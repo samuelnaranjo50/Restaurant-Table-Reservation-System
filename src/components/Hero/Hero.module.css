@@ -1,0 +1,19 @@
+.heroSection{
+    display: flex;
+    padding: 24px 20px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.heroContent {
+    width: 250px;
+}
+
+.image{
+    background-color: beige;
+    width: 100px;
+    height: 163px;
+    border-radius: var(--image-border-radius);
+}

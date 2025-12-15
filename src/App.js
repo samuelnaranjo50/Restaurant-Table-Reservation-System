@@ -1,11 +1,39 @@
-import logo from './logo.svg';
+
 import './App.css';
 
+// Import of components
+import Hero from './components/Hero/Hero';
+import SpecialDishes from './components/SpecialDishes/SpecialDishes';
+import Testimonials from './components/Testimonials/Testimonial';
+import About from './components/About/About';
+import Footer from './components/Footer/Footer';
+
+
 function App() {
+
+  // CSS Hero Layout
+  let HeroStyle = {
+    display: "flex",
+    flexDirection: "row"
+  }
   return (
-    <div>
-      <HomePage/>
-    </div>
+    <>
+      
+      <nav></nav>
+      <main>
+        <Hero style={HeroStyle}/>
+        <SpecialDishes/>
+        <Testimonials/>
+        <About/>
+        <Footer/>
+      </main>
+      <footer></footer>
+
+
+    </>
+  
+
+ 
   );
 }
 

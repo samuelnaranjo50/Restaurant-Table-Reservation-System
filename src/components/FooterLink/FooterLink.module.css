@@ -1,0 +1,4 @@
+.textLinks{
+    display: flex;
+    flex-direction: column;
+}

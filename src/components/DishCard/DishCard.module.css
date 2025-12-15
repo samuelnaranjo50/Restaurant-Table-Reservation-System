@@ -1,0 +1,36 @@
+.DishCard{
+    border: 1px solid black;
+    width: 292px;
+    height: 360px;
+}
+.dishImage{
+    background-color: gray;
+    width: fit-content;
+    height: auto;
+    border: 1px solid black;
+}
+
+.dishContent{ /*Parent of the text content in the card*/
+   
+    padding: 10px 20px;
+}
+
+/*Children dish content*/
+
+.dishInfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dishDescription{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dishCallToAction{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
