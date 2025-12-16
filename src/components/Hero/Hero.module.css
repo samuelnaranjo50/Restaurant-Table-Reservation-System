@@ -1,19 +1,42 @@
+@media (max-width: 768px){
+
 .heroSection{
     display: flex;
     padding: 24px 20px;
     gap: 20px;
     justify-content: center;
     align-items: center;
+
+    background-color: var(--main-color);
 }
 
-
 .heroContent {
-    width: 250px;
+    width: 60%;
+}
+
+.heroH1 {
+    font-size: var(--title-size-mobile);
+    margin: 0;
+    color: var(--secondary-color);
+}
+
+.strong{
+    font-size: var(--card-title-size-mobile);
+    color: var(--white);
+}
+.paragraphText {
+    font-family: var(--secondary-font);
+    font-size: var(--paragraph-size);
+    color: var(--white);
 }
 
 .image{
     background-color: beige;
-    width: 100px;
+    width: 30%;
     height: 163px;
+    max-width: 100%;
+    display: block;
     border-radius: var(--image-border-radius);
+}
+
 }

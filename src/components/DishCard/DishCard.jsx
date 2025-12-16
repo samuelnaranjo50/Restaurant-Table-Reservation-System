@@ -7,14 +7,14 @@ export default function DishCard (){
             <img className={styles.dishImage} alt="Dish Image"/>
             <div className={styles.dishContent}>
                 <div className={styles.dishInfo}>
-                    <h3>Greek Salad</h3>
-                    <strong>$12.00</strong>
+                    <h3 className={styles.emphazis}>Greek Salad</h3>
+                    <strong className={styles.emphazis}>$12.00</strong>
                 </div>
                 <div className={styles.dishDescription}>
-                    <p>The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons. </p>
+                    <p className={styles.paragraphText}>The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons. </p>
                 </div>
                 <div className={styles.dishCallToAction}>
-                    <strong>Order a delivery</strong>
+                    <strong className={styles.emphazis}>Order a delivery</strong>
                     <img alt="Deliver car"/>
                 </div>
             

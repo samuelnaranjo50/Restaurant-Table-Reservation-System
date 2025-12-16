@@ -7,7 +7,7 @@ export default function SpecialDishes(){
     return (
         <div className={styles.SpecialDishesSection}>
             <div className={styles.upperSection} >
-                <h2>Specials</h2>
+                <h2 className={styles.subtitle}>Specials</h2>
                 <Button/>
             </div>
             <div className={styles.specialDishesSection}>

@@ -15,7 +15,17 @@
     padding: 10px 20px;
 }
 
+.paragraphText{
+    font-family: var(--secondary-font);
+    font-size: var(--paragraph-size);
+}
+
+.emphazis{
+font-size: var(--card-title-size-mobile);
+}
+
 /*Children dish content*/
+
 
 .dishInfo{
     display: flex;

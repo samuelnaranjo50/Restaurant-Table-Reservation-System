@@ -17,20 +17,24 @@ function App() {
     flexDirection: "row"
   }
   return (
-    <>
+    <div className="pageWrapper">
       
-      <nav></nav>
+      <header>
+        <nav></nav>
+      </header>
+      
       <main>
         <Hero style={HeroStyle}/>
         <SpecialDishes/>
         <Testimonials/>
         <About/>
-        <Footer/>
       </main>
-      <footer></footer>
+      <footer>
+        <Footer/>
+      </footer>
 
 
-    </>
+    </div>
   
 
  

@@ -1,3 +1,53 @@
 :root{
+  font-size: 100%;
   --image-border-radius:10px;
+
+  /*Font Family*/
+  --primary-font:  "Markazi Text", serif;
+  --secondary-font: "Karla", sans-serif;
+
+  --subtitle-weight: 400;
+
+
+  /*Font sizes*/
+  --title-size-mobile: 2.8rem;
+  --card-title-size-mobile: 1.5rem;
+  --paragraph-size: 1.2rem;
+  --subtitle-size:4rem;
+
+
+  /*Color styles*/
+  --main-color: #495E57;
+  --secondary-color: #F4CE14;
+
+  --higlight-dark: #333333;
+  --black: #000000;
+  --white: #FFFFFF;
+
+  
+
 }
+
+
+.pageWrapper{
+grid-template-columns: 1fr 3fr 1fr;
+
+grid-template-areas: 
+"header"
+"main"
+"footer"
+;
+}
+
+header{
+  grid-area: header;
+}
+main{
+  grid-area: main;
+}
+footer{
+  grid-area: footer;
+}
+
+/*Global styles*/
+
