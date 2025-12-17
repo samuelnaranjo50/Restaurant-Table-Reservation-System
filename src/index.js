@@ -4,11 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+//For example import
+import { HamburgerMenuContext } from './context/hamburgerMenu';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <HamburgerMenuContext>
   <React.StrictMode>
     <App />
   </React.StrictMode>
+  </HamburgerMenuContext>
 );
 
 // If you want to start measuring performance in your app, pass a function
