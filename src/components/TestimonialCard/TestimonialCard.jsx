@@ -2,7 +2,7 @@ import styles from "./TestimonialCard.module.css"
 
 export default function TestimonialCard (){
     return(
-        <div className={styles.card}>
+        <section className={styles.card}>
             <h3>Name</h3>
             <div className={styles.testimonialContent}>
                 <img src="" alt="My img" className={styles.image} />
@@ -13,6 +13,6 @@ export default function TestimonialCard (){
                 </div>
             </div>
 
-        </div>
+        </section>
     )
 }

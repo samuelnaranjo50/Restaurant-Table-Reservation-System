@@ -3,7 +3,7 @@ import styles from "./Hero.module.css"
 
 export default function Hero(props){
     return (
-        <div className={styles.heroSection}>
+        <section className={styles.heroSection}>
             <div className={styles.heroContent}>
                 <h1 className={styles.heroH1}>Little Lemon</h1>
                 <strong className={styles.strong}>Chicago</strong>
@@ -11,6 +11,6 @@ export default function Hero(props){
                 <Button/>
             </div>
             <img className={styles.image} alt="ahghaGH"/>
-        </div>
+        </section>
     )
 }

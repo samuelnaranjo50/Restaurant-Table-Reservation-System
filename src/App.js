@@ -52,14 +52,10 @@ function App() {
       <header>
         
         {isWindowMobile? <MobileNav/>: "This is DESKTOP layout"}
-        
-        {isHamburgerMenuActive? <BlurBackground />: ""}
-        
-        
 
         {isHamburgerMenuActive? <HamburgerMenuMobile/>: "Hamburger is not active"}
         
-        <nav></nav>
+        
         
       </header>
       
@@ -73,6 +69,8 @@ function App() {
         <Footer/>
       </footer>
 
+    {/* Activates the background blur when in mobile the Hamburger menu is active*/}
+    {isHamburgerMenuActive? <BlurBackground />: ""}
 
     </div>
   

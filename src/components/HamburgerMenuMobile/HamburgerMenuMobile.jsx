@@ -20,29 +20,21 @@ export default function HamburgerMenuMobile(){
 
     
     return (
-        <div className={styles.hamburgerContainer}>
-            <div className={styles.NavHead}>
-                <button className="hamburgerIcon" onClick={handleHamburgerIconClick}><img src={hamburgerIcon} alt="Hamburger Menu Icon" /></button>
+        <aside className={styles.hamburgerContainer}>
+            <header className={styles.NavHead}>
+                <button className="hamburgerIcon" onClick={handleHamburgerIconClick} aria-label={isHamburgerMenuActive ? "Close navigation menu" : "Open navigation menu"} aria-expanded={isHamburgerMenuActive}><img src={hamburgerIcon} alt="Hamburger Menu Icon" /></button>
                 <h3>Navigation</h3>
-            </div>
+            </header>
             <hr className={styles.separator}/>
             <nav className={styles.mainSection}>
                 
-                <HamburgerLink path="/reservation-details">
-                     About
-                </HamburgerLink>
-                <HamburgerLink path="/reservation-details">
-                    Menu
-                </HamburgerLink>
-                <HamburgerLink path="/reservation-details">
-                    Reservation
-                </HamburgerLink>
-                <HamburgerLink path="/reservation-details">
-                    Order online
-                </HamburgerLink>
-                <HamburgerLink path="/reservation-details">
-                    Login
-                </HamburgerLink>
+                <ul className={styles.navList}> 
+                    <li><HamburgerLink path="/about">About</HamburgerLink></li>
+                    <li><HamburgerLink path="/menu">Menu</HamburgerLink></li>
+                    <li><HamburgerLink path="/reservation">Reservation</HamburgerLink></li>
+                    <li><HamburgerLink path="/order">Order online</HamburgerLink></li>
+                    <li><HamburgerLink path="/login">Login</HamburgerLink></li>
+                </ul>
                 
            </nav>
            <hr className={`${styles.separator} ${styles.separator1}`}/>
@@ -50,6 +42,6 @@ export default function HamburgerMenuMobile(){
             <img src={littleLemonLogo} alt="Little Lemon Icon" />
            </div>
            
-        </div>
+        </aside>
     )
 }

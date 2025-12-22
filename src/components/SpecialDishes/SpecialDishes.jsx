@@ -5,7 +5,7 @@ import styles from "./SpecialDishes.module.css"
 export default function SpecialDishes(){
 
     return (
-        <div className={styles.SpecialDishesSection}>
+        <section className={styles.SpecialDishesSection}>
             <div className={styles.upperSection} >
                 <h2 className={styles.subtitle}>Specials</h2>
                 <Button/>
@@ -14,6 +14,6 @@ export default function SpecialDishes(){
                 <DishCard/>
             </div>
                
-        </div>
+        </section>
     )
 }

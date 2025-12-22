@@ -3,7 +3,7 @@ import styles from "./About.module.css"
 
 export default function About(){
     return (
-        <div className={styles.section}>
+        <section className={styles.section}>
             <div>
                 <div>
                     <h1 className={styles.heading}>About us</h1>
@@ -14,6 +14,6 @@ export default function About(){
                 
             </div>
             <img className={styles.image} alt="ahghaGH"/>
-        </div>
+        </section>
     )
 }
