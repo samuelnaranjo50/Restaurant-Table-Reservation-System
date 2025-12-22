@@ -14,6 +14,7 @@
   --card-title-size-mobile: 1.5rem;
   --paragraph-size: 1.2rem;
   --subtitle-size:4rem;
+  --higlight-text: 1rem;
 
 
   /*Color styles*/
@@ -21,10 +22,13 @@
   --secondary-color: #F4CE14;
 
   --higlight-dark: #333333;
+  --higlight-light: #EDEFEE;
   --black: #000000;
   --white: #FFFFFF;
 
-  
+  /*Default setting*/
+
+  font-family: var(--primary-font);
 
 }
 

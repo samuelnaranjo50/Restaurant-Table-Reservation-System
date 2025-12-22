@@ -1,0 +1,17 @@
+.linkContainer{
+    background-color: var(--main-color);
+    color: var(--white);
+    text-align: center;
+    width: 70%;
+    font-size: var(--higlight-text);
+    font-family: var(--secondary-font);
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+
+.linkContainer:hover{
+   opacity: 40%;
+}

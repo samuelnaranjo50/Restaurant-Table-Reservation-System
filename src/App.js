@@ -11,6 +11,9 @@ import Testimonials from './components/Testimonials/Testimonial';
 import About from './components/About/About';
 import Footer from './components/Footer/Footer';
 
+//Blur effect
+import BlurBackground from './components/BlurBackground/BlurBackground';
+
 import HamburgerMenuMobile from './components/HamburgerMenuMobile/HamburgerMenuMobile';
 //Import Context
 import {HamburgerMenuContext } from './context/hamburgerMenu';
@@ -49,6 +52,9 @@ function App() {
       <header>
         
         {isWindowMobile? <MobileNav/>: "This is DESKTOP layout"}
+        
+        {isHamburgerMenuActive? <BlurBackground />: ""}
+        
         
 
         {isHamburgerMenuActive? <HamburgerMenuMobile/>: "Hamburger is not active"}

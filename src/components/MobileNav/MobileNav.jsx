@@ -22,7 +22,7 @@ export default function MobileNav(){
     
     return (
         <div>
-           <button onClick={handleHamburgerIconClick}><img src={hamburgerIcon} alt="Hamburger Menu Icon" /></button>
+           <button className="hamburgerIcon" onClick={handleHamburgerIconClick}><img src={hamburgerIcon} alt="Hamburger Menu Icon" /></button>
            <img src={littleLemonLogo} alt="Little Lemon Icon" />
         </div>
     )
