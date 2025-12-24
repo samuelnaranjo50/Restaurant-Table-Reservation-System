@@ -31,7 +31,7 @@ export default function HamburgerMenuMobile(){
                 <ul className={styles.navList}> 
                     <li><HamburgerLink path="/about">About</HamburgerLink></li>
                     <li><HamburgerLink path="/menu">Menu</HamburgerLink></li>
-                    <li><HamburgerLink path="/reservation">Reservation</HamburgerLink></li>
+                    <li><HamburgerLink path="/reservation-details">Reservation</HamburgerLink></li>
                     <li><HamburgerLink path="/order">Order online</HamburgerLink></li>
                     <li><HamburgerLink path="/login">Login</HamburgerLink></li>
                 </ul>

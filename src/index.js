@@ -5,7 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals'
 
 import { BrowserRouter, Routes, Route, } from 'react-router-dom';
-
+//Link components
+import ReservationDetails from './components/ReservationDetails/ReservationDetails';
 
 //For example import
 import { HamburgerMenuContext } from './context/hamburgerMenu';
@@ -17,7 +18,7 @@ root.render(
     <BrowserRouter>
       <Routes>
           <Route path="/" element={<App/>}/>
-          <Route path="/reservation-details" element={<App/>}/>
+          <Route path="/reservation-details" element={<ReservationDetails/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
