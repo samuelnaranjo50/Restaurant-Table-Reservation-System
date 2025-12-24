@@ -8,20 +8,23 @@ import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 //Link components
 import ReservationDetails from './components/ReservationDetails/ReservationDetails';
 
-//For example import
+//Context elements
 import { HamburgerMenuContext } from './context/hamburgerMenu';
+import {ReservationFormReducerContext} from './context/reservationReducer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HamburgerMenuContext>
+  <ReservationFormReducerContext>
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
           <Route path="/" element={<App/>}/>
-          <Route path="/reservation-details" element={<ReservationDetails/>}/>
+          <Route path="/reservation-details" element={<ReservationDetails/>}/> 
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
+  </ReservationFormReducerContext>
   </HamburgerMenuContext>
 );
 
