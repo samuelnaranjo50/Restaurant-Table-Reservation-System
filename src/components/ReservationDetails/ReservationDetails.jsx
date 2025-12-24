@@ -15,6 +15,10 @@ export default function ReservationDetails() {
                     <option value="romantic dinner">Romantic dinner</option>
                 </select>
                 {getFieldError("ocassion")}
+
+                <label htmlFor="name">Name</label>
+                <input type='text' id="name" onChange={(e)=>{reservationDispatch({type: 'element-blur', field: e.target.id, value: e.target.value})}} onBlur={(e)=>{reservationDispatch({type: 'element-change', field: e.target.id, value: e.target.value})}}/>
+                {getFieldError("name")}
              </form>
         </div>
         )
