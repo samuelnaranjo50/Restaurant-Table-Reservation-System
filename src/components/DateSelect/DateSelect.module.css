@@ -1,0 +1,46 @@
+.ComponentContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.ComponentContainer > h2{
+    font-size: var(--section-title);
+}
+.ComponentContainer > p{
+    font-family: var(--secondary-font);
+    font-size: var(--paragraph-size);
+    font-weight: lighter;
+     color: rgba(0, 0, 0, 0.5);
+}
+
+
+.FieldContainer{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.LabelContainer{
+    font-family: var(--secondary-font);
+    font-size: var(--section-categories);
+    font-weight: 750;
+    background-color: var(--higlight-light);
+    color: var(--main-color);
+    padding: 5px 10px;
+    border-radius: 50px;
+}
+
+.InputFieldTrigger{
+    font-family: var(--secondary-font);
+    font-size: var(--section-categories);
+    font-weight: light;
+    background-color: var(--higlight-light);
+    color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: none;
+    width: 210px;
+    text-align: center;
+}
