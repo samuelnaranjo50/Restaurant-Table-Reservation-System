@@ -19,8 +19,10 @@ const reservationReducer = (reservationState, action) => {
             catch (error){
                 
                 errorMessageYup = error.message
-                isThereError = errorMessageYup === action.value? false: true
+                // I check if the return message is equal, since when there is not error the inputed and the return value are the same
+                isThereError = errorMessageYup === action.value? false: true 
                 console.log("Trying validation, is there error?", isThereError)
+                // Assign the erro message to the variable to then assign it to the state object field error message
                 errorMessageYup = error.message
             }
 
@@ -54,6 +56,9 @@ const reservationReducer = (reservationState, action) => {
 const reservationValidation = {
     ocassion: Yup.string().oneOf(["Romantic dinner"], "invalid input"),
     name: Yup.string().min(4, "Must be longer than 4"),
+    time: Yup.string().min(5, "invalid time").max(5, "invalid time"),
+    date: Yup.string("invalid").max(3, "invalid time"),
+    partySize: Yup.number().max(10, "Must be less than 10")
 }
 
 
@@ -69,6 +74,7 @@ export function ReservationFormReducerContext({ children }) {
         emailConfirmation: { value: "", isBlur: false, isError: false, errorMessage: "" },
         name: { value: "", isBlur: false, isError: false, errorMessage: "" },
         lastName: { value: "", isBlur: false, isError: false, errorMessage: "" },
+        partySize: { value: "0", isBlur: false, isError: false, errorMessage: "" }
     })
 
     // getField function to simplify the error rendering

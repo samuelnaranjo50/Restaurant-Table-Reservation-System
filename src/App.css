@@ -11,7 +11,10 @@
 
   /*Font sizes*/
   --title-size-mobile: 2.8rem;
+  --section-title: 2.2rem;
+  --section-categories: 1.4rem;
   --card-title-size-mobile: 1.5rem;
+
   --paragraph-size: 1.2rem;
   --subtitle-size:4rem;
   --higlight-text: 1rem;

@@ -1,0 +1,63 @@
+.ComponentContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+}
+
+.ComponentContainer > h2{
+    font-size: var(--section-title);
+    margin: 0px;
+    width: fit-content;
+}
+
+.fieldInfoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.imageContainer{
+    overflow: hidden;
+    border-radius: 50px;
+    
+}
+
+.imageContainer > img {
+    width: 150px;
+    height: 140px;
+    transform: scale(1.1);
+    object-fit: cover;
+}
+
+.fieldData{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    
+}
+
+.fieldData > label{
+    font-family: var(--secondary-font);
+    font-size: var(--section-categories);
+    font-weight: bolder;
+}
+
+.fieldData > select{
+    font-family: var(--secondary-font);
+    font-size: var(--section-categories);
+    font-weight: bolder;
+   background-color: var(--higlight-light);
+    color: var(--main-color);
+    padding: 5px ;
+    
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    
+}

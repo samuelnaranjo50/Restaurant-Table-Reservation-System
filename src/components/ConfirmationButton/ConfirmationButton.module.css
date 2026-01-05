@@ -1,0 +1,11 @@
+.button{
+    background-color: var(--secondary-color);
+    padding:  15px 50px;
+    border-radius: 50px;
+    font-size: var(--card-title-size-mobile);
+    font-family: var(--secondary-font);
+    font-weight: bold;
+    color: white;
+    border: none;
+    margin-bottom: 20px;
+}
