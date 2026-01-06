@@ -1,0 +1,30 @@
+@keyframes shake {
+    0%{
+        transform: translateX(0px);
+    }
+    25%{
+        transform: translateX(2px);
+    }
+
+    50%{
+        transform: translateX(-2px);
+    }
+    75%{
+        transform: translateX(2px);
+    }
+    100%{
+        transform: translateX(-2px);
+    }
+}
+
+
+.errorMsg{
+    animation: shake 0.5s ease-in-out;
+    font-family: var(--secondary-font);
+    font-size: var(--paragraph-size);
+    font-weight: lighter;
+    color: rgba(255, 0, 0, 1);
+
+    text-align: center;
+    padding: 0px 30px;
+}

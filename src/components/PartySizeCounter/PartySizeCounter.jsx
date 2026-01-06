@@ -31,7 +31,7 @@ export default function PartySizeCounter(){
             <div className={styles.partyCounter}>
                 <button type="button" onClick={()=>changePartySize("decrease")}>-</button>
                 <button type="button" onClick={()=>changePartySize("increase")}>+</button>
-                <input id="partySize" type="text" value={reservationState.partySize.value} onChange={(e)=>{reservationDispatch({type: 'element-change', field: e.target.id, value: e.target.value})}} onBlur={(e)=>{reservationDispatch({type: 'element-blur', field: e.target.id})}}/>
+                <input id="partySize" type="text" value={reservationState.partySize.value} onChange={(e)=>{reservationDispatch({type: 'element-change', field: e.target.id, value: e.target.value})}} onBlur={(e)=>{reservationDispatch({type: 'element-blur', field: e.target.id,  value: e.target.value})}}/>
             </div>
                 {getFieldError("partySize")}
             
