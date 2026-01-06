@@ -24,11 +24,13 @@ export default function OcassionType(){
         anniversary: anniversaryDinnerImg
     }
 
+    
+
     const renderDynamicImage = (property)=>{
         let srcPath = property;
-        //srcPath = srcPath != "birthday" || srcPath != "anniversary" ? "default": srcPath
+        srcPath = srcPath === "" ? "default": srcPath
 
-        const element = createElement("img", {src: dynamicImage[srcPath], alt:"Occassion"})
+        const element = createElement("img", {src: dynamicImage[srcPath], alt:"Occassion", key: property})
         return element
     }
 

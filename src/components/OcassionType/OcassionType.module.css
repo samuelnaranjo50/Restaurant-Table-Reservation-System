@@ -1,9 +1,22 @@
+/*Animation*/
+
+@keyframes occasionFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px); /* Starts slightly lower */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Ends in natural position */
+  }
+}
+
 .ComponentContainer{
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: center;
-    padding: 30px;
+    padding: 0px;
     text-align: center;
 }
 
@@ -22,15 +35,18 @@
 
 .imageContainer{
     overflow: hidden;
-    border-radius: 50px;
+    border-radius: 20%;
+    box-shadow: var(--button-shadow);
     
 }
 
 .imageContainer > img {
-    width: 150px;
+    animation: occasionFade 3s ease-out forwards;
+    width: 150px; 
     height: 140px;
-    transform: scale(1.1);
+    transform: scale(1.7);
     object-fit: cover;
+    display: block;
 }
 
 .fieldData{
@@ -61,3 +77,4 @@
     border: none;
     
 }
+

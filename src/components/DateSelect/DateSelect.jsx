@@ -13,7 +13,7 @@ export default function DateSelect (){
     return(
     <div className={styles.ComponentContainer}>
         {/*Component for date and time*/ }
-        <h2>Choose your date & time </h2>
+        <h2>CHOOSE YOUR DATE & TIME </h2>
         <div className={styles.FieldContainer}>
             <img src={dateIcon} alt="date icon" />
             <label htmlFor="date" className={styles.LabelContainer}>Date</label>

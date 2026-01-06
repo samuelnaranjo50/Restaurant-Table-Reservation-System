@@ -1,0 +1,20 @@
+.ReservationSystemNav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
+.returnButton {
+    background-color: var(--main-color);
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    border: none;
+}
+
+.returnButton:hover {
+    opacity: 40%;
+    cursor: pointer;
+    
+}

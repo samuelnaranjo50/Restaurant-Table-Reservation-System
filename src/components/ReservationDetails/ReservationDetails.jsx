@@ -1,6 +1,8 @@
 import {useReservationFormReducer} from '../../context/reservationReducer'
 import styles from './ReservationDetails.module.css'
 //components ->
+import ReservationSystemNav from '../ReservationSystemNav/ReservationSystemNav'
+import ReservationSystemHeader from '../ReservationSystemHeader/ReservationSystemHeader'
 import DateSelect from '../DateSelect/DateSelect'
 import PartySizeCounter from '../PartySizeCounter/PartySizeCounter'
 import OcassionType from '../OcassionType/OcassionType'
@@ -13,6 +15,8 @@ export default function ReservationDetails() {
     const {reservationDispatch, getFieldError} = useReservationFormReducer()
     return (
         <div >
+            <ReservationSystemNav/>
+            <ReservationSystemHeader/>
             <form action="post" className={styles.formContainer}>
                 {/*Component for date and time*/ }
 
