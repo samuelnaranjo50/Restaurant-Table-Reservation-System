@@ -93,7 +93,7 @@ const reservationValidation = {
     name: Yup.string().min(4, "Must be longer than 4"),
     time: Yup.string().required("Please select the reservation hour"),
     date: Yup.date().min(new Date(new Date().setHours(0, 0, 0, 0)), "We only accept reservations up to 31 days in advance.").max(maximumDate, "We only accept bookings until " + maximumDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })),
-    partySize: Yup.number().typeError("Please enter a valid number").max(10, "Must be less than 10").required("Please tell us how many seats"),
+    partySize: Yup.number().typeError("Please enter a valid number").min(0, "Must be greater than 0").max(20, "Must be less than 20").required("Please tell us how many seats"),
 }
 
 

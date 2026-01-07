@@ -1,10 +1,7 @@
 import {useReservationFormReducer} from '../../context/reservationReducer'
 import { createElement } from 'react'
 import styles from './OcassionType.module.css'
-
-//Icons
-import partyIcon from '../../assets/icons/partyIcon.svg'
-import defaultIcon from'../../assets/icons/Color-lemon-icon.svg'
+import ErrorFeedbackMessage from '../ErrorFeedbackMessage/ErrorFeedbackMessage';
 
 //Images
 
@@ -51,7 +48,7 @@ export default function OcassionType(){
                         <option value="anniversary">Anniversary</option>
                         <option value="default">Good Dinner</option>
                     </select>
-                {getFieldError("ocassion")}
+                <ErrorFeedbackMessage>{getFieldError("ocassion")}</ErrorFeedbackMessage>
                 </div>
 
             </div>
