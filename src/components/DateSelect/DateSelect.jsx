@@ -38,19 +38,16 @@ export default function DateSelect (){
 
     const {reservationState, reservationDispatch, getFieldError} = useReservationFormReducer()
 
-    // Reducer for real time available booking times
-    const [availableTimes, availableTimesDispatch] = useReducer(availableTimesReducer, initializeTimes)
-
 
     // Fetching data when a change in date occurs
     const handledateChangeForAvailability = ()=>{
 
         let timesAvailableAtDate = fetchAPI(new Date(reservationState.date.value));
-        availableTimesDispatch({type: "set-times", value: timesAvailableAtDate})
+        reservationDispatch({type: "set-times", field: "availableTimes",  value: timesAvailableAtDate})
     }
 
 
-    let currentAvailableTimesCollection = availableTimes.map((time) => {
+    let currentAvailableTimesCollection = reservationState.availableTimes.map((time) => {
     return <option key={time}>{time}</option>
 } )
 

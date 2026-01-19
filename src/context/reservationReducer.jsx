@@ -94,6 +94,17 @@ const reservationValidation = {
 
             console.log(blurState)
             return blurState
+
+        // Aditional logic for avaliable booking times
+        case "set-times":
+            console.log(`Available times for booking at date`, action.value)
+            const timesState = {
+                ...reservationState,
+                [action.field]: action.value,
+                time: {value: ""}
+
+            }
+            return timesState
         default:
             return reservationState;
 
@@ -115,7 +126,8 @@ export function ReservationFormReducerContext({ children }) {
         emailConfirmation: { value: "", isBlur: false, isError: false, errorMessage: "" },
         name: { value: "", isBlur: false, isError: false, errorMessage: "" },
         lastName: { value: "", isBlur: false, isError: false, errorMessage: "" },
-        partySize: { value: "0", isBlur: false, isError: false, errorMessage: "" }
+        partySize: { value: "0", isBlur: false, isError: false, errorMessage: "" },
+        availableTimes: []
     })
 
 
