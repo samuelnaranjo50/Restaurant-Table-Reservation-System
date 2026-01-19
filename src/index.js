@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals'
 import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 //Link components
 import ReservationDetails from './components/ReservationDetails/ReservationDetails';
+import ConfirmedBooking from './components/ConfirmedBooking/ConfirmedBooking';
 
 //Context elements
 import { HamburgerMenuContext } from './context/hamburgerMenu';
@@ -21,6 +22,7 @@ root.render(
       <Routes>
           <Route path="/" element={<App/>}/>
           <Route path="/reservation-details" element={<ReservationDetails/>}/> 
+          <Route path="/confirmed-booking" element={<ConfirmedBooking/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

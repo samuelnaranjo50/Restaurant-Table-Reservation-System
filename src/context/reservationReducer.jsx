@@ -8,6 +8,29 @@ const reservationReducerContext = createContext(null)
 // Reducer logic
 const reservationReducer = (reservationState, action) => {
 
+        // Validation object with respective field methods
+
+    // Gettin max date
+    let maxDate = ()=>{
+        let date = new Date()
+        // Modify today date
+         date.setDate(date.getDate() + 31);
+        return date
+    }
+    let maximumDate = maxDate();
+
+const reservationValidation = {
+    ocassion: Yup.string().required("Please select an occasion"),
+    time: Yup.string().required("Please select the reservation hour"),
+    date: Yup.date().min(new Date(new Date().setHours(0, 0, 0, 0)), "We only accept reservations up to 31 days in advance.").max(maximumDate, "We only accept bookings until " + maximumDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })),
+    partySize: Yup.number().typeError("Please enter a valid number").min(0, "Must be greater than 0").max(20, "Must be less than 20").required("Please tell us how many seats"),
+    email: Yup.string().email().required("Please your email"),
+    emailConfirmation: Yup.string().email().oneOf([reservationState.email.value], "Emails must match" ).required("Please confirm your email"),
+    name: Yup.string().required("Please type your name"),
+    lastName: Yup.string().required("Please type your last name"),
+    
+}
+
     // Declare the variable to be usavble by both actions
     let errorMessageYup 
     let isThereError 
@@ -77,24 +100,7 @@ const reservationReducer = (reservationState, action) => {
     }
 }
 
-// Validation object with respective field methods
 
-    // Gettin max date
-    let maxDate = ()=>{
-        let date = new Date()
-        // Modify today date
-         date.setDate(date.getDate() + 31);
-        return date
-    }
-    let maximumDate = maxDate();
-
-const reservationValidation = {
-    ocassion: Yup.string().required("Please select an occasion"),
-    name: Yup.string().min(4, "Must be longer than 4"),
-    time: Yup.string().required("Please select the reservation hour"),
-    date: Yup.date().min(new Date(new Date().setHours(0, 0, 0, 0)), "We only accept reservations up to 31 days in advance.").max(maximumDate, "We only accept bookings until " + maximumDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })),
-    partySize: Yup.number().typeError("Please enter a valid number").min(0, "Must be greater than 0").max(20, "Must be less than 20").required("Please tell us how many seats"),
-}
 
 
 
@@ -111,6 +117,9 @@ export function ReservationFormReducerContext({ children }) {
         lastName: { value: "", isBlur: false, isError: false, errorMessage: "" },
         partySize: { value: "0", isBlur: false, isError: false, errorMessage: "" }
     })
+
+
+
 
     // getField function to simplify the error rendering
     // Simplifies the logic to determine whether or not is require to render the error

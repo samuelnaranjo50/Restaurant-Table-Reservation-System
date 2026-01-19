@@ -15,7 +15,7 @@ export default function ReservationDetails() {
     const {reservationDispatch, getFieldError} = useReservationFormReducer()
     return (
         <div >
-            <ReservationSystemNav/>
+            <ReservationSystemNav path="/"/>
             <ReservationSystemHeader/>
             <form action="post" className={styles.formContainer}>
                 {/*Component for date and time*/ }
@@ -31,7 +31,7 @@ export default function ReservationDetails() {
 
                 <hr className={styles.separator}/>
 
-                <ConfirmationButton>
+                <ConfirmationButton path="/confirmed-booking">
                     Confirm my booking
                 </ConfirmationButton>
 

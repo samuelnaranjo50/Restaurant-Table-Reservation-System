@@ -33,7 +33,7 @@ export default function PartySizeCounter(){
         }
 
         return PartySizeSuggestion.map((num, index)=>{
-            console.log("Element: ", React.createElement("option", {key: index, value: num}, num))
+            //console.log("Element: ", React.createElement("option", {key: index, value: num}, num))
             return React.createElement("option", {key: index, value: num}, num);
             
             
