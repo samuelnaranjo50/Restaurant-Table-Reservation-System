@@ -16,6 +16,7 @@ import ErrorFeedbackMessage from '../ErrorFeedbackMessage/ErrorFeedbackMessage'
 import dateIcon from '../../assets/icons/date-icon.svg'
 import timeIcon from '../../assets/icons/time-icon.svg'
 import { date } from 'yup'
+import { type } from '@testing-library/user-event/dist/type'
 
 export default function DateSelect (){
 
@@ -30,9 +31,15 @@ export default function DateSelect (){
     }
 
 
-    let currentAvailableTimesCollection = reservationState.availableTimes.array.map((time) => {
+    let currentAvailableTimesCollection = reservationState.availableTimes.value.map((time) => {
     return <option key={time}>{time}</option>
 } )
+
+    //Trigering a reset in the available times error
+    useEffect(()=>{
+        console.log("Trigering the dispatch to hide the erro of time availability")
+        reservationDispatch({type: "RESET_AVAILABLE_TIMES_ERROR"})
+    }, [reservationState.availableTimes.value.length])
 
     return(
     <div className={styles.ComponentContainer}>
@@ -56,7 +63,12 @@ export default function DateSelect (){
                     {currentAvailableTimesCollection}
             </select>
         </div>
-        <ErrorFeedbackMessage>{getFieldError("time")}</ErrorFeedbackMessage>
+        {//Logic for the Error to show in this place
+            reservationState.availableTimes.errorMessage.length > 0? 
+            <ErrorFeedbackMessage>{getFieldError("availableTimes")}</ErrorFeedbackMessage> :
+            <ErrorFeedbackMessage>{getFieldError("time")}</ErrorFeedbackMessage>
+
+        }
         <p>Availability one month ahead</p>
     </div>
 

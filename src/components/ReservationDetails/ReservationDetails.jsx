@@ -31,7 +31,7 @@ export default function ReservationDetails() {
 
                 <hr className={styles.separator}/>
 
-                <ConfirmationButton dispatch={() => reservationDispatch({ type: "CHECK_RESERVATION_DETAILS" })} path="/confirmed-booking">
+                <ConfirmationButton dispatch={() => reservationDispatch({ type: "CHECK_RESERVATION_DETAILS" })} dispathc2={() => reservationDispatch({ type: "RESET_NAVIGATION_FOR_DETAILS" })} path="/confirmed-booking">
                     Confirm my booking
                 </ConfirmationButton>
 

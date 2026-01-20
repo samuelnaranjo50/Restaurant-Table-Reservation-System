@@ -33,10 +33,10 @@ const reservationReducer = (reservationState, action) => {
             month: "long",
             day: "numeric",
           }),
-      ),
+      ).typeError("Please select a date for your resevation").required("Please select a date for your resevation"),
     partySize: Yup.number()
       .typeError("Please enter a valid number")
-      .min(0, "Must be greater than 0")
+      .min(1, "Must be greater than 0")
       .max(20, "Must be less than 20")
       .required("Please tell us how many seats"),
     email: Yup.string().email().required("Please your email"),
@@ -46,6 +46,9 @@ const reservationReducer = (reservationState, action) => {
       .required("Please confirm your email"),
     name: Yup.string().required("Please type your name"),
     lastName: Yup.string().required("Please type your last name"),
+    availableTimes: Yup.array()
+        .min(2, "No times available for this date"),
+        
   });
 
   // Declare the variable to be usavble by both actions
@@ -89,6 +92,17 @@ const reservationReducer = (reservationState, action) => {
       return changeState;
 
     case "element-blur":
+
+        // If the user blurs the 'time' field
+    if (action.field === 'time') {
+        const hasTimesAvailable = reservationState.availableTimes.value.length > 0;
+        
+        // Only trigger the "Required" error if there are actually times to choose from
+        if (!hasTimesAvailable) {
+            return reservationState; // Do nothing, let the 'No times available' logic handle it
+        }
+    }
+
       console.log(
         `Element blur at ${action.field} with value: ${action.value}`,
       );
@@ -133,7 +147,7 @@ const reservationReducer = (reservationState, action) => {
         ...reservationState,
         [action.field]: {
           ...reservationState[action.field],
-          array: action.value,
+          value: action.value,
         },
         time: { value: "" },
       };
@@ -151,7 +165,7 @@ const reservationReducer = (reservationState, action) => {
       let excludeKeysCopy = [
         "canNavigateDetailSec",
         "canNavigateBookingSec",
-        "availableTimes",
+        //"availableTimes",
         "emailConfirmation",
         "email",
         "name",
@@ -218,7 +232,6 @@ const reservationReducer = (reservationState, action) => {
               [fieldMappingYup]: {
                 ...detailsState[fieldMappingYup],
                 isBlur: true,
-                value: action.value,
                 isError: true,
                 errorMessage: field.message,
               },
@@ -241,6 +254,38 @@ const reservationReducer = (reservationState, action) => {
 
         return detailsState;
       }
+
+    case "RESET_NAVIGATION_FOR_DETAILS":
+        const resetStateCopy = {
+            ...reservationState,
+            canNavigateDetailSec: false
+        }
+        return resetStateCopy
+
+    case "RESET_AVAILABLE_TIMES_ERROR":
+        
+    
+        if (reservationState.availableTimes.value.length === 0 && reservationState.date.isBlur){
+            return {...reservationState,
+                availableTimes: {
+                ...reservationState.availableTimes,
+                isBlur: true,
+                isError: true,
+                errorMessage: "No times available for this date"}
+              }
+        }
+        else if (reservationState.availableTimes.value.length > 0){
+            
+            return {
+                ...reservationState,
+                availableTimes: {
+                ...reservationState.availableTimes,
+                isBlur: false,
+                isError: false,
+                errorMessage: "",
+              },
+            }
+        }
 
     default:
       return reservationState;
@@ -270,7 +315,7 @@ export function ReservationFormReducerContext({ children }) {
         isError: false,
         errorMessage: "",
       },
-      availableTimes: { array: [""], errorMessage: "" },
+      availableTimes: { value: [""], errorMessage: "" },
       canNavigateDetailSec: "",
       canNavigateBookingSec: "",
     },
