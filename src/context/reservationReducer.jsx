@@ -19,7 +19,7 @@ const reservationReducer = (reservationState, action) => {
     }
     let maximumDate = maxDate();
 
-const reservationValidation = {
+const reservationValidation = Yup.object().shape({
     ocassion: Yup.string().required("Please select an occasion"),
     time: Yup.string().required("Please select the reservation hour"),
     date: Yup.date().min(new Date(new Date().setHours(0, 0, 0, 0)), "We only accept reservations up to 31 days in advance.").max(maximumDate, "We only accept bookings until " + maximumDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })),
@@ -29,7 +29,7 @@ const reservationValidation = {
     name: Yup.string().required("Please type your name"),
     lastName: Yup.string().required("Please type your last name"),
     
-}
+})
 
     // Declare the variable to be usavble by both actions
     let errorMessageYup 
@@ -43,7 +43,7 @@ const reservationValidation = {
             errorMessageYup = ''
             isThereError = false
             try{
-                reservationValidation[action.field].validateSync(action.value)
+                Yup.reach(reservationValidation, action.field).validateSync(action.value)
             }
             catch (error){
                 
@@ -74,7 +74,7 @@ const reservationValidation = {
             isThereError = ""
             
             try{
-                reservationValidation[action.field].validateSync(action.value)
+                Yup.reach(reservationValidation, action.field).validateSync(action.value)
             }
             catch (error){
                 
@@ -97,14 +97,85 @@ const reservationValidation = {
 
         // Aditional logic for avaliable booking times
         case "set-times":
+
+            
             console.log(`Available times for booking at date`, action.value)
             const timesState = {
                 ...reservationState,
-                [action.field]: action.value,
+                [action.field]: { ...reservationState[action.field], array: action.value},
                 time: {value: ""}
 
             }
             return timesState
+        case "CHECK_RESERVATION_DETAILS":
+            console.log("Running")
+            //Array of the object keys
+            let objectEntry = Object.keys(reservationState)
+            let schemaEntryMapping = Object.keys(reservationValidation.fields)
+            console.log("Object keys: ", objectEntry)
+
+            console.log("Object Error mapping: ", schemaEntryMapping)
+            // Copy of the values of the reservation detail intoan object
+            let copyReservationStateValues = {}
+            
+            objectEntry.forEach((entry, index, arr)=>{
+                if (entry !== "availableTimes"){   
+                    copyReservationStateValues[entry] = reservationState[entry].value
+
+                    console.log(`Adding to the object ${entry} with value ${reservationState[entry].value}`)
+                }
+            })
+
+            console.log("Copy object", copyReservationStateValues)
+            // Performing the validation with the copy and the schema
+
+                // Logic for this
+                let yupErrorSchemaObject = ""
+            try{
+                reservationValidation.validateSync(copyReservationStateValues, { abortEarly: false })
+            }
+            catch(error){
+                console.log("These are the error of the validation schema", error.inner)
+                yupErrorSchemaObject = error.inner
+            
+
+            // Returning the new object with errors
+            let detailsState = {...reservationState}
+
+            let avoidFields = ["emailConfirmation",  "email", "name", "lastName"]
+
+            yupErrorSchemaObject.forEach((field) =>{
+
+                let fieldMappingYup = field.path //Field name of the error validation schema
+
+
+                if (field.message && !avoidFields.includes(fieldMappingYup)){
+
+                    detailsState = {
+                    ...detailsState,
+                    [fieldMappingYup]: { ...detailsState[fieldMappingYup], isBlur: true, value: action.value, isError: true , errorMessage: field.message }
+                }
+                }
+            })
+            
+
+           
+                
+
+                // Adding the flag that defines if the usar can navigate or not
+
+                detailsState = {
+                    ...detailsState,
+                    canNavigateDetailSec: false
+                }
+
+                console.log("Final Object for details schema validation: ", detailsState)
+
+                return detailsState
+            }
+        
+                
+
         default:
             return reservationState;
 
@@ -127,7 +198,7 @@ export function ReservationFormReducerContext({ children }) {
         name: { value: "", isBlur: false, isError: false, errorMessage: "" },
         lastName: { value: "", isBlur: false, isError: false, errorMessage: "" },
         partySize: { value: "0", isBlur: false, isError: false, errorMessage: "" },
-        availableTimes: []
+        availableTimes: {array: [""], errorMessage:""},
     })
 
 

@@ -47,7 +47,7 @@ export default function DateSelect (){
     }
 
 
-    let currentAvailableTimesCollection = reservationState.availableTimes.map((time) => {
+    let currentAvailableTimesCollection = reservationState.availableTimes.array.map((time) => {
     return <option key={time}>{time}</option>
 } )
 
