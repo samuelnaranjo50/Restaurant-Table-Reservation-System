@@ -17,23 +17,6 @@ import dateIcon from '../../assets/icons/date-icon.svg'
 import timeIcon from '../../assets/icons/time-icon.svg'
 import { date } from 'yup'
 
-
-
-// Reducer logic
-const initializeTimes = []
-
-const availableTimesReducer = (availableTimes, action ) => {
-
-    switch (action.type){
-        case "set-times":
-            console.log(`Available times for booking at date`, action.value)
-            return action.value
-        
-    }
-
-}
-
-
 export default function DateSelect (){
 
     const {reservationState, reservationDispatch, getFieldError} = useReservationFormReducer()
