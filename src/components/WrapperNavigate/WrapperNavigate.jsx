@@ -16,7 +16,7 @@ export default  function WrapperNavigate(){
     // Setting the dispatch route for dynamic navigation
 
      const dispatch = () => reservationDispatch({ type: "CHECK_RESERVATION_DETAILS" }) //This dispatch is in charge of whole schema validation
-     const dispathc2= () => reservationDispatch({ type: "RESET_NAVIGATION_FOR_DETAILS" }) // Enable backwards navigation by deactivating the the flag in the state
+     const dispathc2= () => reservationDispatch({ type: "RESET_NAVIGATION", field: "canNavigateDetailSec" }) // Enable backwards navigation by deactivating the the flag in the state
      const navigationPath = "/confirmed-booking"
 
       // Dynamic navigation

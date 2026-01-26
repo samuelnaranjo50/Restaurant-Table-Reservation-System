@@ -1,10 +1,7 @@
 import styles from "./ConfirmationButton.module.css";
-import { useEffect, useRef} from "react";
-import {useReservationFormReducer} from '../../context/reservationReducer'
+import {useRef} from "react";
 
-// Dynamic navigation
 
-import {useNavigate} from "react-router-dom";
 export default function ConfirmationButton({ children, dispatch }) {
   // This section provides styling logic for user actions
   const buttonRef = useRef(null);

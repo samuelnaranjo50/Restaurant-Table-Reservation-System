@@ -5,6 +5,33 @@ import * as Yup from "yup";
 
 const reservationReducerContext = createContext(null);
 
+
+// Intial State for the reducer
+
+const initialState = {
+      ocassion: { value: "", isBlur: false, isError: false, errorMessage: "" },
+      date: { value: "", isBlur: false, isError: false, errorMessage: "" },
+      time: { value: "", isBlur: false, isError: false, errorMessage: "" },
+      email: { value: "", isBlur: false, isError: false, errorMessage: "" },
+      emailConfirmation: {
+        value: "",
+        isBlur: false,
+        isError: false,
+        errorMessage: "",
+      },
+      name: { value: "", isBlur: false, isError: false, errorMessage: "" },
+      lastName: { value: "", isBlur: false, isError: false, errorMessage: "" },
+      partySize: {
+        value: "0",
+        isBlur: false,
+        isError: false,
+        errorMessage: "",
+      },
+      availableTimes: { value: [""], errorMessage: "" },
+      canNavigateDetailSec: "",
+      canNavigateBookingSec: "",
+    }
+
 // Reducer logic
 const reservationReducer = (reservationState, action) => {
   // Validation object with respective field methods
@@ -255,10 +282,10 @@ const reservationReducer = (reservationState, action) => {
         return detailsState;
       }
 
-    case "RESET_NAVIGATION_FOR_DETAILS":
+    case "RESET_NAVIGATION":
         const resetStateCopy = {
             ...reservationState,
-            canNavigateDetailSec: false
+            [action.field]: false
         }
         return resetStateCopy
 
@@ -389,7 +416,10 @@ const reservationReducer = (reservationState, action) => {
           canNavigateBookingSec: true,
         };
 
-        
+
+    case "RESET_STATE":
+      return initialState
+      
     default:
       return reservationState;
   }
@@ -397,31 +427,7 @@ const reservationReducer = (reservationState, action) => {
 
 export function ReservationFormReducerContext({ children }) {
   const [reservationState, reservationDispatch] = useReducer(
-    reservationReducer,
-    {
-      ocassion: { value: "", isBlur: false, isError: false, errorMessage: "" },
-      date: { value: "", isBlur: false, isError: false, errorMessage: "" },
-      time: { value: "", isBlur: false, isError: false, errorMessage: "" },
-      email: { value: "", isBlur: false, isError: false, errorMessage: "" },
-      emailConfirmation: {
-        value: "",
-        isBlur: false,
-        isError: false,
-        errorMessage: "",
-      },
-      name: { value: "", isBlur: false, isError: false, errorMessage: "" },
-      lastName: { value: "", isBlur: false, isError: false, errorMessage: "" },
-      partySize: {
-        value: "0",
-        isBlur: false,
-        isError: false,
-        errorMessage: "",
-      },
-      availableTimes: { value: [""], errorMessage: "" },
-      canNavigateDetailSec: "",
-      canNavigateBookingSec: "",
-    },
-  );
+    reservationReducer, initialState);
 
   // getField function to simplify the error rendering
   // Simplifies the logic to determine whether or not is require to render the error
