@@ -3,7 +3,7 @@
 import ReservationSystemNav from '../ReservationSystemNav/ReservationSystemNav'
 import ReservationSummary from '../ReservationSummary/ReservationSummary'
 import ContactInformation from '../ContactInformation/ContactInformation'
-import ConfirmationButton from '../ConfirmationButton/ConfirmationButton'
+import WrapperSubmit from '../WrapperSubmit/WrapperSubmit'
 
 export default function ConfirmedBooking(){
     return(
@@ -11,7 +11,7 @@ export default function ConfirmedBooking(){
             <ReservationSystemNav path="/reservation-details"/>
             <ReservationSummary/>
             <ContactInformation/>
-            <ConfirmationButton>Book my table</ConfirmationButton>
+            <WrapperSubmit/>
 
 
         

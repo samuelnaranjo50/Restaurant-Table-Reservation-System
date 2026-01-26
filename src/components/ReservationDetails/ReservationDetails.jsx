@@ -6,13 +6,15 @@ import ReservationSystemHeader from '../ReservationSystemHeader/ReservationSyste
 import DateSelect from '../DateSelect/DateSelect'
 import PartySizeCounter from '../PartySizeCounter/PartySizeCounter'
 import OcassionType from '../OcassionType/OcassionType'
-import ConfirmationButton from '../ConfirmationButton/ConfirmationButton'
-// Logic used to determine if is error or not in the specific field
+
+//Schema validation & button
+import WrapperNavigate from '../WrapperNavigate/WrapperNavigate'
 
 
 export default function ReservationDetails() {
 
     const {reservationDispatch, getFieldError} = useReservationFormReducer()
+    
     return (
         <div >
             <ReservationSystemNav path="/"/>
@@ -31,9 +33,7 @@ export default function ReservationDetails() {
 
                 <hr className={styles.separator}/>
 
-                <ConfirmationButton dispatch={() => reservationDispatch({ type: "CHECK_RESERVATION_DETAILS" })} dispathc2={() => reservationDispatch({ type: "RESET_NAVIGATION_FOR_DETAILS" })} path="/confirmed-booking">
-                    Confirm my booking
-                </ConfirmationButton>
+                <WrapperNavigate />
 
              </form>
         </div>

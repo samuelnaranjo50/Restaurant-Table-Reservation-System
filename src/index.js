@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 //Link components
 import ReservationDetails from './components/ReservationDetails/ReservationDetails';
 import ConfirmedBooking from './components/ConfirmedBooking/ConfirmedBooking';
+import SuccesfulBooking from './components/SuccesfulBooking/SuccesfulBooking';
 
 //Context elements
 import { HamburgerMenuContext } from './context/hamburgerMenu';
@@ -23,6 +24,7 @@ root.render(
           <Route path="/" element={<App/>}/>
           <Route path="/reservation-details" element={<ReservationDetails/>}/> 
           <Route path="/confirmed-booking" element={<ConfirmedBooking/>}/>
+          <Route path="/booking-success" element={<SuccesfulBooking/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

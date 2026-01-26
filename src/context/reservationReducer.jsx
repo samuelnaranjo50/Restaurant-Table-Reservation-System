@@ -286,7 +286,110 @@ const reservationReducer = (reservationState, action) => {
               },
             }
         }
+        
+    case "CHECK_CONTACT_INFORMATION":
 
+    console.log("I'm being trigger");
+      //Creating a copy in an Array of the object keys
+
+      let objectEntry2 = Object.keys(reservationState);
+
+      console.log("getting mappin of keys", objectEntry2);
+
+      /* 
+            Copy of the values of the reservation detail into an object
+            Like key - value pairs and not the previous complex structure
+            */
+      let copyReservationStateValues2 = {};
+
+      let excludeKeysCopy2 = [
+        "canNavigateDetailSec",
+        "canNavigateBookingSec",
+        
+      ];
+
+      objectEntry2.forEach((entry) => {
+        if (!excludeKeysCopy2.includes(entry)) {
+          copyReservationStateValues2[entry] = reservationState[entry].value;
+
+          console.log(
+            `Adding to the object ${entry} with value ${reservationState[entry].value}`,
+          );
+        }
+      });
+
+      console.log("Copy object", copyReservationStateValues2);
+
+      // Performing the validation with the copy and the schema
+
+      // Logic for this
+      let yupErrorSchemaObject2 = "";
+      let contactState = { ...reservationState }; // Activating the state copy
+
+      try {
+        // Run the validation schema
+        reservationValidation.validateSync(copyReservationStateValues2, {
+          abortEarly: false,
+        });
+      } catch (error) {
+        console.log(
+          "These are the error of the validation schema",
+          error.inner,
+        );
+        yupErrorSchemaObject2 = error.inner;
+
+        // Set the flag to true  so that the user can validate if no error was thrown
+        let canNotNaviagateCounter2 = 0;
+        let canNavigate2 = false;
+        yupErrorSchemaObject2.forEach((field) => {
+          if (!excludeKeysCopy2.includes(field.path)) {
+            canNotNaviagateCounter2++;
+          }
+        });
+
+        canNavigate2 = canNotNaviagateCounter2 > 0 ? false : true;
+
+        console.log(
+          `Can navigate? ${canNavigate2}, Error found ${canNotNaviagateCounter2}`,
+        );
+        contactState = {
+          ...contactState,
+          canNavigateBookingSec: canNavigate2,
+        };
+
+        // Returning the new object with errors
+
+        yupErrorSchemaObject2.forEach((field) => {
+          let fieldMappingYup = field.path; //Field name of the error validation schema
+
+          if (field.message && !excludeKeysCopy2.includes(fieldMappingYup)) {
+            contactState= {
+              ...contactState,
+              [fieldMappingYup]: {
+                ...contactState[fieldMappingYup],
+                isBlur: true,
+                isError: true,
+                errorMessage: field.message,
+              },
+            };
+          }
+        });
+
+        console.log(
+          "Final Object for details schema validation: ",
+          contactState,
+        );
+
+        return contactState;
+      }
+
+      //Handling when all fields are correct
+      return contactState = {
+          ...contactState,
+          canNavigateBookingSec: true,
+        };
+
+        
     default:
       return reservationState;
   }
@@ -299,7 +402,6 @@ export function ReservationFormReducerContext({ children }) {
       ocassion: { value: "", isBlur: false, isError: false, errorMessage: "" },
       date: { value: "", isBlur: false, isError: false, errorMessage: "" },
       time: { value: "", isBlur: false, isError: false, errorMessage: "" },
-      ocassion: { value: "", isBlur: false, isError: false, errorMessage: "" },
       email: { value: "", isBlur: false, isError: false, errorMessage: "" },
       emailConfirmation: {
         value: "",
