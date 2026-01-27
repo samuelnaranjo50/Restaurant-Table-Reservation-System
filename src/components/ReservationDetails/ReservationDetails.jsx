@@ -6,6 +6,7 @@ import ReservationSystemHeader from '../ReservationSystemHeader/ReservationSyste
 import DateSelect from '../DateSelect/DateSelect'
 import PartySizeCounter from '../PartySizeCounter/PartySizeCounter'
 import OcassionType from '../OcassionType/OcassionType'
+import CustomHr from '../CustomHr/CustomHr'
 
 //Schema validation & button
 import WrapperNavigate from '../WrapperNavigate/WrapperNavigate'
@@ -16,7 +17,7 @@ export default function ReservationDetails() {
     const {reservationDispatch, getFieldError} = useReservationFormReducer()
     
     return (
-        <div >
+        <div className={styles.mainContainer}>
             <ReservationSystemNav path="/"/>
             <ReservationSystemHeader/>
             <form action="post" className={styles.formContainer}>
@@ -24,14 +25,16 @@ export default function ReservationDetails() {
 
                 <DateSelect/>
 
-                <hr className={styles.separator}/>
+                <CustomHr/>
+
+                
                 <PartySizeCounter/>
 
-                <hr className={styles.separator}/>
+               <CustomHr/>
 
                 <OcassionType/>
 
-                <hr className={styles.separator}/>
+               <CustomHr/>
 
                 <WrapperNavigate />
 

@@ -1,12 +1,16 @@
 .summaryContainer{
     display: flex;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 30px;
     background-color: rgba(230, 230, 230, 0.5);
     border: 3px solid var(--main-color);
+    box-sizing: border-box;
     padding: 20px;
+    text-align: center;
+    flex-shrink: 1;
 }
 
 .summaryContainer > h1{
@@ -14,13 +18,21 @@
     margin: 0;
 }
 
+.outerDataContainer{
+    padding: 0 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .summaryDataContainer{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: self-start;
+    flex-shrink: 1;
     gap: 30px;
-    padding: 20px;
+    padding: 0 10vw;
     
 }
 
@@ -29,7 +41,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    width: 80vw;
+    flex: 1 1 0;
     gap: 10px;
+    padding: 0 20px;
 
     
 }
@@ -41,7 +57,7 @@
     padding: 5px 10px;
     font-family: var(--secondary-font);
     font-weight: bolder;
-    width: 135px;
+    width: 100%;
     
 }
 .dataType > h2{
@@ -50,7 +66,6 @@
 }
 
 .inputedData{
-    display: inline;
     font-family: var(--secondary-font);
     font-size: var(--section-categories);
     font-weight: light;
@@ -60,7 +75,8 @@
     border-radius: 50px;
     border: none;
     text-align: center;
-    height: fit-content;
+    
+    
     
 
 }
@@ -71,5 +87,10 @@
 .inputedData > p{
     font-size: var(--section-categories);
     margin: 0;
+}
+
+.imgIcon{
+    width: 20px;
+    margin-left: 20px;
 }
 

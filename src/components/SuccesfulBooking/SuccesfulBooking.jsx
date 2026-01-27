@@ -1,5 +1,6 @@
+import styles from "./SuccessfulBooking.module.css"
 import { useReservationFormReducer } from "../../context/reservationReducer";
-import { Link, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 
 // Random ref function
   let randomRef = () => {
@@ -29,8 +30,8 @@ export default function SuccesfulBooking() {
   let referenceRandom = randomRef();
 
   return (
-    <div>
-      <header>
+    <div className={styles.mainContainer}>
+      <header className={styles.hero}>
         <h1>Table Secured! We’ll see you soon, {name}.</h1>
         <p>
           Your reservation is confirmed. A copy of this receipt has been sent to{" "}
@@ -38,30 +39,35 @@ export default function SuccesfulBooking() {
         </p>
       </header>
       <main>
-        <h2>At a glance</h2>
+        
 
         <section>
-          <div>
-            <p>When</p>
-            <p>{dayHour}</p>
-          </div>
-          <div>
-            <p>Who</p>
-            <p>{guests} Guests</p>
-          </div>
-          <div>
-            <p>Reference</p>
-            <p>#RR{referenceRandom}</p>
-          </div>
+
+          <table className={styles.summary}>
+            
+              <thead>
+                <th>When</th>
+                <th>Who</th>
+                <th>Reference</th>
+              </thead>
+              <tbody>
+                
+                  <td>{dayHour}</td>
+                
+                  <td>{guests} Guests</td>
+                
+                
+                  <td>#RR{referenceRandom}</td>
+                
+                
+              </tbody>
+              
+            
+          </table>
+          
         </section>
 
-        <section>
-          <div></div>
-          <div></div>
-          <div></div>
-        </section>
-
-        <section>
+        <section className={styles.buttonContainer}>
           <button
             onClick={() => {
               navigate("/");

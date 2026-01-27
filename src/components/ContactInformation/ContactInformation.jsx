@@ -1,6 +1,9 @@
+import styles from "./ContactInformation.module.css"
+
 import {useReservationFormReducer} from '../../context/reservationReducer'
 import ErrorFeedbackMessage from '../ErrorFeedbackMessage/ErrorFeedbackMessage'
 
+import CustomHr from "../CustomHr/CustomHr"
 
 export default function ContactInformation(){
     const {reservationState, reservationDispatch, getFieldError} = useReservationFormReducer()
@@ -8,18 +11,19 @@ export default function ContactInformation(){
         
         <div>
 
-            <h2>CONTACT INFORMATION</h2>
+            <h2 className={styles.titleSec}>CONTACT INFORMATION</h2>
 
        
-        <form action="">
-            <label htmlFor="email">Email</label>
+        <form className={styles.formContainer}>
+            <label htmlFor="email">Email Adress</label>
             <input id='email' value={reservationState.email.value} type="email" onChange={(e)=>{reservationDispatch({type: 'element-change', field: e.target.id, value: e.target.value})}} onBlur={(e)=>{reservationDispatch({type: 'element-blur', field: e.target.id, value: e.target.value})}} />
             <ErrorFeedbackMessage>{getFieldError("email")}</ErrorFeedbackMessage>
 
-            <label htmlFor="emailConfirmation">Email Confirmation</label>
+            <label htmlFor="emailConfirmation">Confirm Email Address </label>
             <input id='emailConfirmation' value={reservationState.emailConfirmation.value} type="email" onChange={(e)=>{reservationDispatch({type: 'element-change', field: e.target.id, value: e.target.value})}} onBlur={(e)=>{reservationDispatch({type: 'element-blur', field: e.target.id, value: e.target.value})}}/>
             <ErrorFeedbackMessage>{getFieldError("emailConfirmation")}</ErrorFeedbackMessage>
-            <br />
+            
+            <hr className={styles.separator}/>
 
             <label htmlFor="name">Name</label>
             <input id="name"  value={reservationState.name.value}type="text" onChange={(e)=>{reservationDispatch({type: 'element-change', field: e.target.id, value: e.target.value})}} onBlur={(e)=>{reservationDispatch({type: 'element-blur', field: e.target.id, value: e.target.value})}}/>

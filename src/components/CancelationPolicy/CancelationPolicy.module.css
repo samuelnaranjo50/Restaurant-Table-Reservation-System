@@ -1,0 +1,43 @@
+.mainContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    font-family: var(--secondary-font); 
+    text-align: center;
+    padding: 0 5vw;
+}
+
+.mainContainer > h2 {
+    font-size: var(--section-title);
+    text-decoration-line: underline ;
+    text-decoration-color: black
+
+
+    
+}
+
+.paragraph{
+    font-size: var(--paragraph-size);
+    font-family: var(--secondary-font);
+}
+
+.paragraph > bold{
+    color: var(--secondary-color);
+}
+
+.priceContainer{
+    font-size: var(--paragraph-size);
+    font-family: var(--secondary-font);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--main-color);
+    height: 36px;
+    width: 30vw;
+    background-color: var(--higlight-light) ;
+    border-radius: 20px;
+    padding: 0 10px;
+}
+
