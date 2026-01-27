@@ -3,7 +3,7 @@
 .heroSection{
     display: flex;
     padding: 24px 20px;
-    gap: 20px;
+    gap: 1rem 2rem;
     justify-content: center;
     align-items: center;
 
@@ -11,7 +11,22 @@
 }
 
 .heroContent {
-    width: 60%;
+    
+
+    background-image: url("../../assets/Images/vista-superior-de-comida-en-mesa\ 1.png");
+    text-align: center;
+    border-radius: 50px;
+    
+}
+
+.heroTextContainer{
+    background-color: rgba(73, 94, 87, 0.43);
+    backdrop-filter: blur(0.4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 4rem;
 }
 
 .heroH1 {

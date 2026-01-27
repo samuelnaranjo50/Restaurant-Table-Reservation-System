@@ -14,6 +14,7 @@ export default function ConfirmationButton({ children, dispatch }) {
     buttonRef.current.style.backgroundColor = "#F4CE14";
   };
 
+
   return (
     
       <button

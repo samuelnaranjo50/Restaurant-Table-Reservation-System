@@ -21,7 +21,7 @@ export default function MobileNav(){
     }
     
     return (
-        <div>
+        <div className={styles.mobileNav}>
            <button className="hamburgerIcon" onClick={handleHamburgerIconClick} aria-label={isHamburgerMenuActive ? "Close navigation menu" : "Open navigation menu"} aria-expanded={isHamburgerMenuActive}><img src={hamburgerIcon} alt="Hamburger Menu Icon" /></button>
            <img src={littleLemonLogo} alt="Little Lemon Icon" />
         </div>

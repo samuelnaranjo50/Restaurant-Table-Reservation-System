@@ -46,6 +46,12 @@ grid-template-areas:
 "main"
 "footer"
 ;
+
+
+place-items: center;
+overflow: hidden;
+
+
 }
 
 header{
