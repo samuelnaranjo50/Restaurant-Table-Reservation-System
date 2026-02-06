@@ -1,28 +1,3 @@
-.headerParentContainer {
-    background-color: var(--main-color);
-    padding: 20px;
-    overflow: hidden;
-}
-
-.imageContainer{
-    background-image: url('../../assets/Images/Tables-images-small.png');
-    width:80vw;
-    padding: 8px 20px ;
-    object-fit: cover;
-    border-radius: 20px;
-    
-}
-
-.transparentBackground{
-    background-color: var(--main-color);
-    opacity: 95%;
-    width: 70vw;
-    height: 100%;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
 
 .transparentBackground > h1{
     font-size: var(--title-size-mobile);
@@ -47,6 +22,32 @@
 }
 
 /* 2. Desktop (Large screens) */
-@media (min-width: 1024px) {
+@media (min-width: 724px) {
   /* Desktop-specific layouts (e.g., sidebars appearing) */
+  .headerParentContainer {
+    background-color: var(--main-color);
+    padding: 20px 40px;
+    overflow: hidden;
+    width: 100vw;
+    }
+
+    .mainContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .transparentBackground{
+    
+    
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    }
+    .mainContainer > img{
+        width: 30vw;;
+    }
 }

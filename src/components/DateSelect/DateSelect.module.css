@@ -47,3 +47,11 @@
     width: 210px;
     text-align: center;
 }
+
+@media (min-width: 768px) {
+  /* Styles for tablets and up */
+  .ComponentContainer{
+    margin-top: 0px;
+}
+}
+
