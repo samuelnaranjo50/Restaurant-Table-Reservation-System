@@ -19,6 +19,8 @@ export default function ReservationDetails() {
     return (
         <div className={styles.mainContainer}>
             <ReservationSystemNav path="/"/>
+
+            
             <ReservationSystemHeader/>
             <form action="post" className={styles.formContainer}>
                 {/*Component for date and time*/ }

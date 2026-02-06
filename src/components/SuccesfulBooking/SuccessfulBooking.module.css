@@ -125,11 +125,13 @@
     width: 80vw;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    padding: 20px;
     gap: 10px;
 }
 
 .buttonContainer button{
+
     background-color: rgba(244, 206, 20, 0.6);
     backdrop-filter: blur(10px);
 }

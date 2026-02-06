@@ -1,4 +1,36 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0px 20%;
+    font-family: var(--secondary-font);
+}
+
+.container > h3{
+    font-size: var(--card-title-size-mobile);
+    color: var(--main-color);
+}
 .textLinks{
     display: flex;
     flex-direction: column;
+    
+
 }
+
+.textLinks > a{
+    
+    color: black;
+    font-weight: lighter;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.textLinks > a:hover{
+    
+    color: rgba(92, 92, 92, 0.7)
+    
+}
+    
+

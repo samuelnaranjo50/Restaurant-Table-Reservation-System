@@ -1,21 +1,21 @@
 import styles from "./DishCard.module.css"
-
-export default function DishCard (){
+import deliverBike from "../../assets/icons/deliver bike.png"
+export default function DishCard ({props: {id, title, price, description, getImageSrc}}){
 
     return (
-        <div className={styles.DishCard}>
-            <img className={styles.dishImage} alt="Dish Image"/>
+        <div key={id} className={styles.DishCard}>
+            <img className={styles.dishImage} src={getImageSrc()} alt="Dish Image"/>
             <div className={styles.dishContent}>
                 <div className={styles.dishInfo}>
-                    <h3 className={styles.emphazis}>Greek Salad</h3>
-                    <strong className={styles.emphazis}>$12.00</strong>
+                    <h3 className={styles.emphazis}>{title}</h3>
+                    <strong className={styles.price}>${price}</strong>
                 </div>
                 <div className={styles.dishDescription}>
-                    <p className={styles.paragraphText}>The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons. </p>
+                    <p className={styles.paragraphText}>{description}</p>
                 </div>
                 <div className={styles.dishCallToAction}>
-                    <strong className={styles.emphazis}>Order a delivery</strong>
-                    <img alt="Deliver car"/>
+                    <strong className={styles.deliver}>Order a delivery</strong>
+                    <img src={deliverBike} alt="Deliver car"/>
                 </div>
             
             

@@ -1,5 +1,6 @@
 import styles from "./Footer.module.css"
 import FooterLink from "../FooterLink/FooterLink"
+import CustomHr from "../CustomHr/CustomHr"
 
 export default function Footer(){
 
@@ -52,15 +53,26 @@ export default function Footer(){
   }]
 ;
 
+// Style for hr
+ let hr = {width: "70vw"}
+
     return (
         <footer className={styles.footerLinks}>
             <nav>
                 <FooterLink title="Navigation" data={footerLinks}/>
             </nav>
+
+                <CustomHr style={hr}/>
                 
                 <FooterLink title="Social Media" data={socialMediaLinks}/>
+
+                <CustomHr style={hr}/>
                 
                 <FooterLink title="Social Media" data={socialMediaLinks}/>
+
+                <CustomHr style={hr}/>
+
+                <img src="" alt="" />
             
         </footer>
     )

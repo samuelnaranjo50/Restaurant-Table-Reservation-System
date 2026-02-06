@@ -1,15 +1,28 @@
 import styles from "./TestimonialCard.module.css"
+import star from "../../assets/icons/estrella-en-negro-de-forma-de-cinco-puntas.png"
 
-export default function TestimonialCard (){
+
+
+export default function TestimonialCard ({props: {id, name, rating, comment, getImageSrc}}){
+
+    
+        let startArr = []
+        for(let i= 0; i < rating; i++){
+            startArr.push(<img key={i} src={star} alt= "start"/>);
+        }
+
+
     return(
-        <section className={styles.card}>
-            <h3>Name</h3>
+        <section key={id} className={styles.card}>
+            <h3>{name}</h3>
             <div className={styles.testimonialContent}>
-                <img src="" alt="My img" className={styles.image} />
+                <img src={getImageSrc()} alt="Rater image" className={styles.image} />
                 
                 <div className={styles.testimonialDescription}>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <div className={styles.testimonialRating}></div>
+                    <p>{comment}</p>
+                    <div className={styles.testimonialRating}>
+                        {startArr /*Auto generated rating*/ }
+                    </div>
                 </div>
             </div>
 

@@ -37,6 +37,7 @@
 
 .strong{
     font-size: var(--card-title-size-mobile);
+    font-family: var(--secondary-font);
     color: var(--white);
 }
 .paragraphText {
@@ -45,13 +46,15 @@
     color: var(--white);
 }
 
-.image{
-    background-color: beige;
-    width: 30%;
-    height: 163px;
-    max-width: 100%;
-    display: block;
-    border-radius: var(--image-border-radius);
+.heroTextContainer button{
+    color: black;
+    border-radius: 10px;
+    font-size: var(--paragraph-size);
+    padding: 10px;
+    font-family: var(--secondary-font);
+    font-weight: normal;
 }
+
+
 
 }

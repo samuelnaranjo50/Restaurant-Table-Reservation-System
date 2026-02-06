@@ -1,9 +1,23 @@
 .section{
+    
     display: flex;
-    padding: 24px 20px;
+    flex-direction: column;
     gap: 20px;
-    justify-content: center;
+    
     align-items: center;
+    overflow: hidden;
+    height: 60vh;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    width: 80vw;
+    padding-bottom: 30px;
+    text-align: center;
+    padding-top: 0px;
+    
 }
 
 .heading{
@@ -13,9 +27,36 @@
     width: 250px;
 }
 
+
 .image{
-    background-color: beige;
-    width: 100px;
-    height: 163px;
-    border-radius: var(--image-border-radius);
+    align-self: flex-start;
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+  
+}
+
+.textContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 30px;
+}
+
+.textContainer > h1{
+    font-size: var(--title-size-mobile);
+    font-weight: light;
+    color: var(--main-color);
+
+}
+.textContainer > strong{
+    font-size: var(--card-title-size-mobile);
+    color: var(--secondary-color);
+}
+
+.textContainer > p{
+    font-size: var(--paragraph-size);
+    font-family: var(--secondary-font);
+    color: var(--higlight-dark);
 }

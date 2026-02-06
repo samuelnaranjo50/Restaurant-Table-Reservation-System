@@ -3,8 +3,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: gray;
-    padding: 40px;
+    background-color: var(--higlight-dark);
+    padding-bottom: 20px;
+    color: white;
+    width: 70vw;
+    border-radius: 10px;
+    box-shadow: var(--button-shadow);
 }
 
 
@@ -20,15 +24,28 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 40%;
 }
 
 .testimonialRating{
     width: 76px;
-    background-color: aquamarine;
+    background-color: var(--higlight-light);
     height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    border-radius: 50px;
 }
 
 .image{
-    width:85px ;
+    width:8rem;
+    height: 8rem;
     background-color: antiquewhite;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.testimonialRating img {
+    width: 10px;
 }

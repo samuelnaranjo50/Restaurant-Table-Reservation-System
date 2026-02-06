@@ -1,13 +1,27 @@
 .DishCard{
-    border: 1px solid black;
-    width: 292px;
-    height: 360px;
+    flex-shrink: 0;
+    width: 20rem;
+    height: 25rem;
+    background-color: var(--higlight-light);
+    font-family: var(--secondary-font);
+    font-size: var(--paragraph-size);
+    box-shadow: var(--button-shadow);
+
+    flex: 0 0 300px ;       /* The '0' in the middle stops the shrinking */
+    min-width: 300px;
+    scroll-snap-align: center;
+
+    
+    
 }
 .dishImage{
     background-color: gray;
-    width: fit-content;
-    height: auto;
-    border: 1px solid black;
+    width: 300px;
+    height: 40%;
+    object-fit:  cover;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+   
 }
 
 .dishContent{ /*Parent of the text content in the card*/
@@ -18,10 +32,23 @@
 .paragraphText{
     font-family: var(--secondary-font);
     font-size: var(--paragraph-size);
+    color: var(--main-color);
 }
 
 .emphazis{
-font-size: var(--card-title-size-mobile);
+    font-size: var(--card-title-size-mobile);
+    margin: 0;
+    font-weight: normal;
+}
+
+.price{
+    color: var(--main-color);
+}
+
+.deliver{
+    
+    font-weight: normal;
+    color: var(--higlight-dark);
 }
 
 /*Children dish content*/

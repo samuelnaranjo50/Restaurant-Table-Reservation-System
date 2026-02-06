@@ -7,7 +7,7 @@ export default function FooterLink(props){
        return element
     })
     return (
-        <div>
+        <div className={styles.container} >
             <h3>{props.title}</h3>
             <div className={styles.textLinks}>
                {links}

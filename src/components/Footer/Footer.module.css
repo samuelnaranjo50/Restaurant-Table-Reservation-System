@@ -1,6 +1,10 @@
 .footerLinks {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 40px;
     justify-content: center;
+    background-color: var(--higlight-light);
+    width: 100%;
+    padding: 20px;
 }
+

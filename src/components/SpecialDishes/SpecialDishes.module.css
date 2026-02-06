@@ -1,4 +1,4 @@
-@media (max-width: 768px){
+
 
 .SpecialDishesSection{
     border: 1px solid gray;
@@ -6,22 +6,72 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 20px;
+
+    
+
 }
 
 .upperSection{
-    display: flex;
-    justify-content: space-between;
-    width: 250px;
-}
-.subtitle{
-    font-size: 2rem;
-    font-weight: var(--subtitle-weight);
-}
-
-.specialDishesSection{
+    font-size: var(--title-size-mobile);
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+    gap: 20vw;
+    width: 100%;
+    padding: 10px 20px 0px;
 }
+.subtitle{
+   font-size: 2.4rem;
+    font-weight: var(--subtitle-weight);
+    
 }
+
+.menuButton{
+    background-color: var(--higlight-dark);
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+}
+
+
+.dishContainer {
+    display: inline-flex;
+    width: 100vw;
+    flex-direction: row;  /* Force horizontal */
+    flex-wrap: nowrap;     /* ABSOLUTELY NO WRAPPING */
+    justify-content: flex-start;
+    padding: 10% 20px;
+    padding-top: 0;
+    padding-left: 10%; 
+    padding-right: 10%;
+    overflow-x: auto;      /* The magic scroll */
+    gap: 30px;
+    
+    /* Smoothness for mobile */
+    -webkit-overflow-scrolling: touch; 
+    scroll-snap-type: x mandatory;
+}
+
+.dishContainer {
+    /* 1. For Firefox */
+    scrollbar-width: none;
+
+    /* 2. For Internet Explorer and Edge */
+    -ms-overflow-style: none;
+}
+
+/* 3. For Chrome, Safari, and Opera */
+.dishContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollSpacer{
+    flex: 0 0 30%; /* Matches the padding-left you used earlier */
+    visibility: hidden;
+}
+
+
+

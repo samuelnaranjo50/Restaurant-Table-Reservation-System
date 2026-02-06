@@ -1,19 +1,25 @@
 
 import styles from "./About.module.css"
+import image from "../../assets/Images/Success Background image mobile.png"
 
 export default function About(){
     return (
         <section className={styles.section}>
-            <div>
-                <div>
+           
+                <img className={styles.image}  src={image} alt="Delicious food"/>
+            
+            
+            <div className={styles.textContainer}>
+                
+                
                     <h1 className={styles.heading}>About us</h1>
                     <strong>Little Lemon</strong>
-                </div>
                 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quae rerum voluptatum nobis fugit. Praesentium porro deleniti soluta. Temporibus obcaecati odit asperiores voluptatibus sapiente, eius nobis nulla libero cupiditate impedit.</p>
+                
+                <p>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
                 
             </div>
-            <img className={styles.image} alt="ahghaGH"/>
+            
         </section>
     )
 }
