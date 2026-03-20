@@ -7,7 +7,7 @@ export default function ReservationSystemHeader() {
                 <div className={styles.transparentBackground}>
                     <h1>Reserve Your Table</h1>
                     <div>
-                        <strong>System</strong>
+                        <strong data-testid="first" >System</strong>
                         <p>This is little lemon table booking system</p>
                     </div>
                 </div>
