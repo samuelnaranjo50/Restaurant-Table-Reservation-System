@@ -1,5 +1,4 @@
-/* fetchAPI */
-import { fetchAPI } from '../Api.js/Api'
+
 // Other import
 
 import {useReservationFormReducer} from '../../context/reservationReducer'
@@ -15,8 +14,8 @@ import ErrorFeedbackMessage from '../ErrorFeedbackMessage/ErrorFeedbackMessage'
 
 import dateIcon from '../../assets/icons/date-icon.svg'
 import timeIcon from '../../assets/icons/time-icon.svg'
-import { date } from 'yup'
-import { type } from '@testing-library/user-event/dist/type'
+
+// New changes till here
 
 export default function DateSelect (){
 
@@ -24,10 +23,8 @@ export default function DateSelect (){
 
 
     // Fetching data when a change in date occurs
-    const handledateChangeForAvailability = ()=>{
-
-        let timesAvailableAtDate = fetchAPI(new Date(reservationState.date.value));
-        reservationDispatch({type: "set-times", field: "availableTimes",  value: timesAvailableAtDate})
+    const handledateChangeForAvailability = (newDate)=>{
+        reservationDispatch({type: "set-times", field: "availableTimes", selecteDate: newDate})
     }
 
 
@@ -49,7 +46,7 @@ export default function DateSelect (){
             <img src={dateIcon} alt="date icon" />
             <label htmlFor="date" className={styles.LabelContainer}>Date</label>
             <input id="date" value={reservationState.date.value} className={styles.InputFieldTrigger} type='date' onChange={(e)=>{
-                handledateChangeForAvailability()
+                handledateChangeForAvailability(e.target.value)
                 reservationDispatch({type: 'element-blur', field: e.target.id, value: e.target.value})}} 
                 onBlur={(e)=>{reservationDispatch({type: 'element-change', field: e.target.id, value: e.target.value})}}/>
         </div>

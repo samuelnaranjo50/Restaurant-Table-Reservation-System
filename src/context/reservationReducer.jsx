@@ -1,7 +1,26 @@
 import { useContext, createContext, useReducer } from "react";
 
+// Changes to acomplish project function requirements of Meta
+/* fetchAPI */
+import { fetchAPI } from '../components/Api.js/Api'
+
 // For the validation object import Yup
 import * as Yup from "yup";
+
+// Funtion meta changes
+export const initializeTimes = () => {
+    // Step 1: Return the result of fetchAPI for today's date
+    return fetchAPI(new Date()); 
+};
+
+export const updateTimes = (date) => {
+  // Fetch time available based on date
+  let timesAvailableAtDate = fetchAPI(new Date(date));
+  //Return time available
+  return timesAvailableAtDate
+}
+
+// Till here
 
 const reservationReducerContext = createContext(null);
 
@@ -10,7 +29,7 @@ const reservationReducerContext = createContext(null);
 
 const initialState = {
       ocassion: { value: "", isBlur: false, isError: false, errorMessage: "" },
-      date: { value: "", isBlur: false, isError: false, errorMessage: "" },
+      date: { value: new Date(), isBlur: false, isError: false, errorMessage: "" },
       time: { value: "", isBlur: false, isError: false, errorMessage: "" },
       email: { value: "", isBlur: false, isError: false, errorMessage: "" },
       emailConfirmation: {
@@ -27,7 +46,7 @@ const initialState = {
         isError: false,
         errorMessage: "",
       },
-      availableTimes: { value: [""], errorMessage: "" },
+      availableTimes: { value: initializeTimes(), errorMessage: "" },
       canNavigateDetailSec: "",
       canNavigateBookingSec: "",
     }
@@ -169,12 +188,14 @@ const reservationReducer = (reservationState, action) => {
 
     // Aditional logic for avaliable booking times
     case "set-times":
-      console.log(`Available times for booking at date`, action.value);
+      
+      let newTimes = updateTimes(action.selecteDate)
+      console.log(`Available times for booking at date`,newTimes );
       const timesState = {
         ...reservationState,
         [action.field]: {
           ...reservationState[action.field],
-          value: action.value,
+          value: newTimes,
         },
         time: { value: "" },
       };
