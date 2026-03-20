@@ -10,6 +10,7 @@ import SpecialDishes from './components/SpecialDishes/SpecialDishes';
 import Testimonials from './components/Testimonials/Testimonial';
 import About from './components/About/About';
 import Footer from './components/Footer/Footer';
+import CustomHr from './components/CustomHr/CustomHr';
 
 //Blur effect
 import BlurBackground from './components/BlurBackground/BlurBackground';
@@ -46,14 +47,16 @@ function App() {
     console.log("Functional change", isHamburgerMenuActive)
   }, [isHamburgerMenuActive])
 
+  let hr = {width: "80vw"}
+
   return (
     <div className="pageWrapper">
       
       <header>
         
-        {isWindowMobile? <MobileNav/>: "This is DESKTOP layout"}
+        {isWindowMobile? <MobileNav/>: ""}
 
-        {isHamburgerMenuActive? <HamburgerMenuMobile/>: "Hamburger is not active"}
+        {isHamburgerMenuActive? <HamburgerMenuMobile/>: ""}
         
         
         
@@ -62,12 +65,13 @@ function App() {
       <main>
         <Hero/>
         <SpecialDishes/>
+        <CustomHr style={hr}/>
         <Testimonials/>
+        <CustomHr style={hr}/>
         <About/>
       </main>
-      <footer>
+      
         <Footer/>
-      </footer>
 
     {/* Activates the background blur when in mobile the Hamburger menu is active*/}
     {isHamburgerMenuActive? <BlurBackground />: ""}
