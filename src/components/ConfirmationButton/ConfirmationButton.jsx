@@ -24,6 +24,8 @@ export default function ConfirmationButton({ children, dispatch }) {
         onMouseDown={handleButtonclickDown}
         onMouseUp={handleButtonclickUp}
         onClick={dispatch}
+        aria-label="On Click"
+
       >
         {children}
       </button>
