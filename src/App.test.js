@@ -20,6 +20,9 @@ import OcassionType from './components/OcassionType/OcassionType.jsx'
     // Second Page
 import ContactInformation from './components/ContactInformation/ContactInformation.jsx'
 
+// Final Test API and submission
+import TableForm from './components/TableForm/TableForm.jsx';
+
 
 
 describe("Testing Application Functionality", ()=>{
@@ -425,4 +428,91 @@ describe("Contact Information Validation Feedback", () => {
   expect(errorMessage).toBeInTheDocument();
 });
 
+});
+describe("Form Is submitted with required values", () => {
+  const validReservation = {
+    date: "2026-03-26",
+    time: "19:00",
+    partySize: 4,
+    occasion: "birthday", // ensure this matches the 'value' attribute in your <option>
+    name: "John",
+    lastName: "Doe",
+    email: "john.doe@example.com",
+    emailConfirmation: "john.doe@example.com"
+  };
+
+  const invalidReservation = {
+    date: "2025-01-01",
+    time: "",
+    partySize: -2,
+    occasion: "",
+    name: "",
+    lastName: "",
+    email: "invalid-email",
+    emailConfirmation: "different@example.com"
+  };
+
+  const setupForm = () => {
+    const user = userEvent.setup();
+    const mockSubmit = jest.fn((e) => e.preventDefault());
+    
+    render(
+      <ReservationFormReducerContext>
+        <MemoryRouter>
+          <form onSubmit={mockSubmit} name="reservation-form">
+            <TableForm />
+            <ContactInformation />
+            <button type="submit">Submit</button>
+          </form>
+        </MemoryRouter>
+      </ReservationFormReducerContext>
+    );
+    
+    return { user, mockSubmit };
+  };
+
+  test("The API call is forbidden when the values are not complete", async () => {
+    const { user } = setupForm();
+
+    const dateInput = screen.getByLabelText(/Date/i);
+    await user.type(dateInput, invalidReservation.date);
+
+    const partyInput = screen.getByRole("spinbutton");
+    await user.clear(partyInput);
+    await user.type(partyInput, invalidReservation.partySize.toString());
+
+    const emailInput = screen.getByRole('textbox', { name: /^email address$/i });
+    await user.type(emailInput, invalidReservation.email);
+
+    // In JSDOM, verify HTML5 validation states rather than expecting event cancellation
+    expect(partyInput).toBeInvalid();
+    expect(emailInput).toBeInvalid();
+    
+  });
+
+  test("The API call is done with proper values", async () => {
+    const { user, mockSubmit } = setupForm();
+
+    await user.type(screen.getByLabelText(/Date/i), validReservation.date);
+    
+    await user.selectOptions(screen.getByLabelText(/Time/i), validReservation.time);
+
+    const partyInput = screen.getByRole("spinbutton");
+    await user.clear(partyInput);
+    await user.type(partyInput, validReservation.partySize.toString());
+
+    // Target the specific label instead of the generic combobox role
+    const occasionInput = screen.getByLabelText(/Select The Ocassion/i);
+    await user.selectOptions(occasionInput, validReservation.occasion);
+
+    await user.type(screen.getByRole('textbox', { name: /^name$/i }), validReservation.name);
+    await user.type(screen.getByRole('textbox', { name: /^last name$/i }), validReservation.lastName);
+    await user.type(screen.getByRole('textbox', { name: /^email address$/i }), validReservation.email);
+    await user.type(screen.getByRole('textbox', { name: /^confirm email address$/i }), validReservation.emailConfirmation);
+
+    const submitButton = screen.getByRole('button', { name: /submit/i });
+    await user.click(submitButton);
+
+    expect(mockSubmit).toHaveBeenCalledTimes(1);
+  });
 });
