@@ -45,7 +45,7 @@ export default function DateSelect (){
         <div className={styles.FieldContainer}>
             <img src={dateIcon} alt="date icon" />
             <label htmlFor="date" className={styles.LabelContainer}>Date</label>
-            <input id="date" value={reservationState.date.value} className={styles.InputFieldTrigger} type='date' onChange={(e)=>{
+            <input id="date" value={reservationState.date.value} className={styles.InputFieldTrigger} type='date' required onChange={(e)=>{
                 handledateChangeForAvailability(e.target.value)
                 reservationDispatch({type: 'element-blur', field: e.target.id, value: e.target.value})}} 
                 onBlur={(e)=>{reservationDispatch({type: 'element-change', field: e.target.id, value: e.target.value})}}/>
@@ -54,7 +54,7 @@ export default function DateSelect (){
         <div className={styles.FieldContainer}>
             <img src={timeIcon} alt="Time icon" />
             <label htmlFor="time" className={styles.LabelContainer}>Time</label>
-            <select id="time" value={reservationState.time.value} className={styles.InputFieldTrigger} onChange={(e)=>{reservationDispatch({type: 'element-change', field: e.target.id, value: e.target.value})}} onBlur={(e)=>{reservationDispatch({type: 'element-blur', field: e.target.id, value: e.target.value})}}>
+            <select id="time" required value={reservationState.time.value} className={styles.InputFieldTrigger} onChange={(e)=>{reservationDispatch({type: 'element-change', field: e.target.id, value: e.target.value})}} onBlur={(e)=>{reservationDispatch({type: 'element-blur', field: e.target.id, value: e.target.value})}}>
                     
                     <option selected disabled value="" >00:00</option>
                     {currentAvailableTimesCollection}

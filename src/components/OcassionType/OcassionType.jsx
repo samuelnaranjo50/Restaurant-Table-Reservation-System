@@ -42,7 +42,7 @@ export default function OcassionType(){
                 <div className={styles.fieldData}>
             
                     <label htmlFor="ocassion">Select The Ocassion</label>
-                    <select id="ocassion" value={reservationState.ocassion.value} onChange={(e)=>{reservationDispatch({type: 'element-change', field: e.target.id, value: e.target.value})}} onBlur={(e)=>{reservationDispatch({type: 'element-blur', field: e.target.id, value: e.target.value})}}>
+                    <select id="ocassion" required value={reservationState.ocassion.value} onChange={(e)=>{reservationDispatch({type: 'element-change', field: e.target.id, value: e.target.value})}} onBlur={(e)=>{reservationDispatch({type: 'element-blur', field: e.target.id, value: e.target.value})}}>
                         <option selected disabled value="" >Ocassion</option>
                         <option value="birthday">Birthday</option>
                         <option value="anniversary">Anniversary</option>
