@@ -1,71 +1,33 @@
-# Getting Started with Create React App
+# Little Lemon Restaurant - Table Reservation System
+**Meta Front-End Developer Professional Certificate: Capstone Project**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🍋 Project Overview
+This is the final Capstone project for the Meta Front-End Developer Professional Certificate. The application is a React-based table reservation system for the fictional "Little Lemon" restaurant, featuring dynamic time slot management, form validation, and responsive design.
 
-## Available Scripts
+## 🛠️ Tech Stack
+* **Frontend:** React (Hooks, Context API)
+* **Styling:** CSS Modules / SASS
+* **Validation:** Built my own validation **micro-framework** using `reducer`, `context`, `custom hooks` and a colletion of helper methods.
+* **Testing:** Jest & React Testing Library
+* **Routing:** React Router v6
 
-In the project directory, you can run:
+## 🚀 Key Features
+* **Dynamic Booking:** Real-time availability updates based on the selected date.
+* **Form Validation:** Comprehensive client-side validation for booking details and contact information.
+* **Responsive Design:** Optimized for mobile, tablet, and desktop viewing.
+* **Unit Testing:** Verified logic for the `initializeTimes` and `updateTimes` reducer functions. Verified user experience validation form error feedback.
 
-### `npm start`
+## 🧪 Testing
+To run the test suite:
+\`\`\`bash
+npm test
+\`\`\`
+*Includes tests for HTML5 validation, state transitions, and component rendering.*
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📦 Installation
+1. Clone the repository: `git clone https://github.com/samuelnaranjo50/Restaurant-Table-Reservation-System.git` 
+2. Install dependencies: `npm install`
+3. Start the dev server: `npm start`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Restaurant-Table-Reservation-System
+---
+*Developed as part of the Meta Professional Certification.*
