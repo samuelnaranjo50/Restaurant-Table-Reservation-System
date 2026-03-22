@@ -2,13 +2,14 @@ import Button from "../Button"
 import DishCard from "../DishCard/DishCard"
 import styles from "./SpecialDishes.module.css"
 
+
 const synteticDishData = [
     {
     id: 1,
     title: "Greek Salad",
     price: 12.99,
     description: "Crispy lettuce, peppers, olives, and our signature feta cheese, garnished with crunchy garlic croutons.",
-    getImageSrc: () => require("../../assets/Images/Success Background image mobile (1).png"),
+    getImageSrc: () => require("../../assets/Images/dishes/greek-salad.jpg"),
   },
   
   {
@@ -16,14 +17,14 @@ const synteticDishData = [
     title: "Bruschetta",
     price: 5.99,
     description: "Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.",
-    getImageSrc: () => require("../../assets/Images/Success Background image mobile (1).png"),
+    getImageSrc: () => require("../../assets/Images/dishes/bruschetta.jpg"),
   },
   {
     id: 3,
     title: "Lemon Dessert",
     price: 5.00,
     description: "This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
-    getImageSrc: () => require("../../assets/Images/Success Background image mobile (1).png"),
+    getImageSrc: () => require("../../assets/Images/dishes/lemon-dessert.jpg"),
   },
 ]
 
