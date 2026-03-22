@@ -35,7 +35,10 @@ export default function Testimonials (){
     return(
         <div className={styles.section}>
             <h2>Testimonials</h2>
-            {renderedTestiomials}
+            <div className={styles.cards}>
+              {renderedTestiomials}
+            </div>
+            
         </div>
     )
     

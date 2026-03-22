@@ -73,5 +73,21 @@
     visibility: hidden;
 }
 
+@media(min-width: 757px){
+    .dishContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px;
+    
+}
+
+.scrollSpacer{
+    flex: 0 0 0%; /* Matches the padding-left you used earlier */
+    visibility: hidden;
+}
+
+}
+
 
 

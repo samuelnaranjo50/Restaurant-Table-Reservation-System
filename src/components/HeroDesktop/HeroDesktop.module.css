@@ -1,0 +1,69 @@
+.heroSection{
+    display: flex;
+    padding: 20px 80px;
+    gap: 1rem 2rem;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--main-color);
+}
+
+.heroTextContainer{
+    background-color: rgba(73, 94, 87, 0.43);
+    backdrop-filter: blur(0.4px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 3rem 4rem;
+}
+
+.heroTextContainer > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+.heroH1 {
+    font-size: var(--title-size-mobile);
+    margin: 0;
+    color: var(--secondary-color);
+}
+
+.strong{
+    font-size: var(--card-title-size-mobile);
+    font-family: var(--secondary-font);
+    color: var(--white);
+}
+.paragraphText {
+    font-family: var(--secondary-font);
+    font-size: var(--paragraph-size);
+    color: var(--white);
+}
+
+.heroTextContainer button{
+    color: black;
+    border-radius: 10px;
+    font-size: var(--paragraph-size);
+    padding: 10px;
+    font-family: var(--secondary-font);
+    font-weight: normal;
+}
+
+.image{
+border-radius: 50px;
+width: 35rem;
+}
+
+.button{
+    width: 100%;
+}
+
+@media (max-width: 1100px) {
+    .image{
+        
+        width: 45vw;
+}
+}

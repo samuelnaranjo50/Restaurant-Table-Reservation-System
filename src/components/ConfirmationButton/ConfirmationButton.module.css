@@ -1,4 +1,5 @@
-.button{
+
+    .button{
     background-color: var(--secondary-color);
     padding:  15px 50px;
     border-radius: 50px;
@@ -16,4 +17,8 @@
     background-color: rgba(247, 221, 90, 1);
     cursor: pointer;
 }
+
+
+
+
 

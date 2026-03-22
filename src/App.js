@@ -5,11 +5,15 @@ import { useState, useEffect } from 'react';
 
 // Import of components
 import MobileNav from './components/MobileNav/MobileNav';
+import DesktopNav from './components/DesktopNav/DesktopNav';
 import Hero from './components/Hero/Hero';
+import HeroDesktop from './components/HeroDesktop/HeroDesktop'
 import SpecialDishes from './components/SpecialDishes/SpecialDishes';
 import Testimonials from './components/Testimonials/Testimonial';
 import About from './components/About/About';
+import AboutDesk from './components/AboutDesk/AboutDesk';
 import Footer from './components/Footer/Footer';
+import FooterDesk from './components/FooterDesk/FoterDesk';
 import CustomHr from './components/CustomHr/CustomHr';
 
 //Blur effect
@@ -54,7 +58,7 @@ function App() {
       
       <header>
         
-        {isWindowMobile? <MobileNav/>: ""}
+        {isWindowMobile? <MobileNav/>: <DesktopNav/>}
 
         {isHamburgerMenuActive? <HamburgerMenuMobile/>: ""}
         
@@ -63,15 +67,17 @@ function App() {
       </header>
       
       <main>
-        <Hero/>
+        {isWindowMobile? <Hero/>: <HeroDesktop/>}
+        
         <SpecialDishes/>
         <CustomHr style={hr}/>
         <Testimonials/>
         <CustomHr style={hr}/>
-        <About/>
+        {isWindowMobile? <About/>: <AboutDesk/>}
+        
       </main>
-      
-        <Footer/>
+        {isWindowMobile? <Footer/>: <FooterDesk/>}
+        
 
     {/* Activates the background blur when in mobile the Hamburger menu is active*/}
     {isHamburgerMenuActive? <BlurBackground />: ""}

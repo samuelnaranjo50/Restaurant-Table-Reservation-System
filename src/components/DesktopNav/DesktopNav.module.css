@@ -1,0 +1,34 @@
+.navContainer{
+    width: 100vw;
+    display: flex;
+    padding: 20px 50px;
+    align-items:center;
+    justify-content: space-around;
+
+}
+
+.linksUl{
+    display: flex;
+    gap: 50px;
+    font-size: 1.2rem;
+    font-family: var(--secondary-font);
+    
+}
+
+.linksUl > li{
+    list-style-type: none;
+
+}
+
+.linksUl > li a{
+    text-decoration: none;
+}
+
+.linksUl > li a:visited{
+    color: var(--main-color);
+    
+}
+
+.linksUl > li a:hover{
+    color: rgb(2, 34, 12);;
+}

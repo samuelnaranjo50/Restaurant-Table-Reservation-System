@@ -1,9 +1,12 @@
-import styles from "./Footer.module.css"
+import styles from "./FoterDesk.module.css"
 import FooterLink from "../FooterLink/FooterLink"
 import CustomHr from "../CustomHr/CustomHr"
-import logo from "../../assets/logos/Logo with text + green background.png"
 
-export default function Footer(){
+import logo from "../../assets/logos/Logo with text + green background.png"
+                
+
+
+export default function FooterDesk(){
 
     const footerLinks = [
   {
@@ -77,22 +80,18 @@ const contactLinks = [
 
     return (
         <footer className={styles.footerLinks}>
+            <img src={logo} alt="Little lemon logo" className={styles.img}/>
+
+            <hr className={styles.hr}/>
+
             <nav>
                 <FooterLink title="Navigation" data={footerLinks}/>
             </nav>
 
-                <CustomHr style={hr}/>
-                
                 <FooterLink title="Social Media" data={socialMediaLinks}/>
 
-                <CustomHr style={hr}/>
-                
                 <FooterLink title="Contact" data={contactLinks}/>
 
-                <CustomHr style={hr}/>
-
-                <img src={logo} alt="Little lemon logo" className={styles.img} />
-            
         </footer>
     )
 }

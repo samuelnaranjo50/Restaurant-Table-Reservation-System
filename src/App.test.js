@@ -163,7 +163,7 @@ describe("Test For Validation Schema feedback in the form while filling it", () 
 
   // 1. Format Date to YYYY-MM-DD (Required for HTML5 date inputs)
   let pastDate = new Date();
-  pastDate.setDate(pastDate.getDate() - 1)
+  pastDate.setDate(pastDate.getDate() - 2)
   pastDate = pastDate.toISOString().split('T')[0];
 
   // 2. Act: Interactions must be awaited

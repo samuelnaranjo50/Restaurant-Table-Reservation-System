@@ -1,0 +1,29 @@
+.footerLinks {
+    display: flex;
+    gap: 1px;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: var(--higlight-light);
+    width: 100%;
+    padding: 20px 100px;
+    margin-left: 100px;
+    
+    
+}
+
+.hr{
+    border: 0.5;
+    align-self: center;
+    
+    width: 200px;
+    opacity: 0.5;
+    transform: rotate(90deg);
+}
+.img{
+    border-radius: 20px;
+    align-self: center;
+    justify-self: center;
+    margin: auto;
+    
+
+}

@@ -3,6 +3,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
+    padding-bottom: 40px;
+}
+.cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 40px;
     padding-bottom: 40px;
 }
@@ -10,3 +18,12 @@
 .section >h2{
     font-size: var(--title-size-mobile);
 }
+
+@media(min-width: 757px){
+    .cards{
+    flex-direction: row;
+    padding: 0 10px;
+  
+}
+}
+

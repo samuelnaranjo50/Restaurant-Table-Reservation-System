@@ -8,3 +8,8 @@
     padding: 20px;
 }
 
+.img{
+    width: 50vw;
+    border-radius: 20px;
+    margin: auto;
+}

@@ -49,3 +49,18 @@
 .testimonialRating img {
     width: 10px;
 }
+
+@media(min-width: 757px){
+    .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--higlight-dark);
+    padding-bottom: 20px;
+    color: white;
+    width: 25vw;
+    border-radius: 10px;
+    box-shadow: var(--button-shadow);
+}
+}
