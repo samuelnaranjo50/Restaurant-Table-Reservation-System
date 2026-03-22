@@ -19,15 +19,24 @@ This is the final Capstone project for the Meta Front-End Developer Professional
 
 ## 🧪 Testing
 To run the test suite:
-\`\`\`bash
+```bash
 npm test
-\`\`\`
+```
 *Includes tests for HTML5 validation, state transitions, and component rendering.*
 
 ## 📦 Installation
-1. Clone the repository: `git clone https://github.com/samuelnaranjo50/Restaurant-Table-Reservation-System.git` 
-2. Install dependencies: `npm install`
-3. Start the dev server: `npm start`
+1. Clone the repository:
+ ```bash
+git clone https://github.com/samuelnaranjo50/Restaurant-Table-Reservation-System.git
+```
+2. Install dependencies:
+ ```bash
+npm install
+```
+3. Start the dev server:
+ ```bash
+npm start
+```
 
 ---
 *Developed as part of the Meta Professional Certification.*
