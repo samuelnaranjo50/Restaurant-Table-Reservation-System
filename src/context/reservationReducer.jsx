@@ -301,8 +301,9 @@ const reservationReducer = (reservationState, action) => {
         );
 
         return detailsState;
+        
       }
-
+      break;
     case "RESET_NAVIGATION":
         const resetStateCopy = {
             ...reservationState,
@@ -334,7 +335,7 @@ const reservationReducer = (reservationState, action) => {
               },
             }
         }
-        
+    break;    
     case "CHECK_CONTACT_INFORMATION":
 
     console.log("I'm being trigger");

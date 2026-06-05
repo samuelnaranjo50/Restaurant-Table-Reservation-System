@@ -4,7 +4,7 @@ export default function DishCard ({props: {id, title, price, description, getIma
 
     return (
         <div key={id} className={styles.DishCard}>
-            <img className={styles.dishImage} src={getImageSrc()} alt="Dish Image"/>
+            <img className={styles.dishImage} src={getImageSrc()} alt="Special Dish"/>
             <div className={styles.dishContent}>
                 <div className={styles.dishInfo}>
                     <h3 className={styles.emphazis}>{title}</h3>

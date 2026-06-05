@@ -8,7 +8,10 @@ import guestsIcon from "../../assets/icons/partyIcon.svg"
 import partyHat from "../../assets/icons/partyHat.svg"
 export default function ReservationSummary(){
     
-        const {reservationState, reservationDispatch, getFieldError} = useReservationFormReducer()
+        const {reservationState} = useReservationFormReducer()
+        const displayDate = reservationState.date.value instanceof Date 
+        ? reservationState.date.value.toLocaleDateString() 
+        : String(reservationState.date.value || "")
     return(
         <section className={styles.summaryContainer}>
 
@@ -22,7 +25,7 @@ export default function ReservationSummary(){
                     <h2>Date And Time</h2>
                 </div>
                 <div className={styles.inputedData}>
-                    <p>{reservationState.date.value}</p>
+                    <p>{displayDate}</p>
                 </div>
                 <div className={styles.inputedData}>
                     <p>{reservationState.time.value}</p>
