@@ -8,7 +8,8 @@ To achieve this, the project features a custom validation micro-framework, built
 The application itself is a React-based table reservation system featuring dynamic time slot management and a fully responsive design. This restaurant reservation scenario served as the perfect real-world testbed to validate the quality of the logic implemented within the micro-framework, allowing me to observe exactly how it interacts with a complex, multi-step form in action.
 
 ## Live Deployment
-**[Experience the live application here](https://restaurant-table-reservation-system-6gyss3i39-samthearchitect.vercel.app/)*
+
+*[Experience the live application here](https://restaurant-table-reservation-system-khaki.vercel.app/)*
 
 ## 🛠️ Tech Stack
 * **Frontend:** React (Hooks, Context API)
