@@ -1,15 +1,21 @@
-# Little Lemon Restaurant - Table Reservation System
-**Meta Front-End Developer Professional Certificate: Capstone Project**
+# Table Reservation System
 
-## 🍋 Project Overview
-This is the final Capstone project for the Meta Front-End Developer Professional Certificate. The application is a React-based table reservation system for the fictional "Little Lemon" restaurant, featuring dynamic time slot management, form validation, and responsive design.
+## Project Overview
+The primary engineering goal of this application was to build a robust, dynamic booking engine without relying on third-party form libraries (like Formik or React Hook Form). The objective was to gain a comprehensive understanding of how these libraries are constructed and the underlying state mechanisms that make them work.
+
+To achieve this, the project features a custom validation micro-framework, built entirely from scratch using native React hooks, state machines, the Context API, and reducers. This architecture ensures a highly predictable and performant user experience.
+
+The application itself is a React-based table reservation system featuring dynamic time slot management and a fully responsive design. This restaurant reservation scenario served as the perfect real-world testbed to validate the quality of the logic implemented within the micro-framework, allowing me to observe exactly how it interacts with a complex, multi-step form in action.
+
+## Live Deployment
+**[Experience the live application here](https://restaurant-table-reservation-system-6gyss3i39-samthearchitect.vercel.app/)*
 
 ## 🛠️ Tech Stack
 * **Frontend:** React (Hooks, Context API)
 * **Styling:** CSS Modules / SASS
 * **Validation:** Built my own validation **micro-framework** using `reducer`, `context`, `custom hooks` and a colletion of helper methods.
 * **Testing:** Jest & React Testing Library
-* **Routing:** React Router v6
+* **Routing:** React Router 
 
 ## 🚀 Key Features
 * **Dynamic Booking:** Real-time availability updates based on the selected date.
@@ -38,5 +44,4 @@ npm install
 npm start
 ```
 
----
-*Developed as part of the Meta Professional Certification.*
+

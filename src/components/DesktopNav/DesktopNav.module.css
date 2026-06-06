@@ -17,11 +17,12 @@
 
 .linksUl > li{
     list-style-type: none;
-
+    color: var(--main-color);
 }
 
 .linksUl > li a{
     text-decoration: none;
+    color: var(--main-color);
 }
 
 .linksUl > li a:visited{
